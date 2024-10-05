@@ -9,7 +9,7 @@ using namespace std;
 
 extern "C" {
 
-    const double R = 8.314;
+    const double R = 287.05;
     const double Mol_mass = 28.97;
 
     vector<vector<pair<double,double>>> Atom; // density, T
@@ -22,4 +22,11 @@ extern "C" {
         }
     }
 
+    void Explosion(double powder, double comH, int x, int y){
+        double Q = comH*powder; // 열, 밀도 계산
+        double delta_T = Q/(1005.0*Atom[x][y].F);
+
+        Atom[x][y].F *= Atom[x][y].S/(Atom[x][y].S+delta_T);
+        Atom[x][y].S += delta_T;
+    }
 }
