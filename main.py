@@ -12,7 +12,9 @@ pg.init()
 FPS = 60
 FramePerSec = pg.time.Clock()
 
-window_size = (1280, 720)
+window_size_x = 1280
+window_size_y = 720
+window_size = (window_size_x,window_size_y)
 Start_of_FireworkZone = 46
 Len_of_FireworkZone = 1188/32
 G = 9.8
@@ -47,6 +49,9 @@ while True:
     
     SimulateDisplay.fill((0,0,0))
     
+    Atomo = ctypes.CDLL("./Atomospheric/Atom_Calculation.so")
+    Atomo.Creat_Atom(window_size_x,window_size_y)
+
     #pg.draw.circle(SimulateDisplay,(255,255,255),(400,400),30)
 
     FramePerSec.tick(FPS)
