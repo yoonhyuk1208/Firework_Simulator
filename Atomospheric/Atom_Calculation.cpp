@@ -24,9 +24,11 @@ extern "C" {
 
     void Explosion(double powder, double comH, int x, int y){
         double Q = comH*powder; // 열, 밀도 계산
-        double delta_T = Q/(1005.0*Atom[x][y].F);
+        double delta_T = Q/(1005.0*Atom[x][y].F*0.25);
 
         Atom[x][y].F *= Atom[x][y].S/(Atom[x][y].S+delta_T);
         Atom[x][y].S += delta_T;
+
+        // 빛 공식
     }
 }

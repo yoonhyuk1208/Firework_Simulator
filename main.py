@@ -23,7 +23,7 @@ SimulateDisplay = pg.display.set_mode(window_size)
 SimulateDisplay.fill((0,0,0))
 pg.display.set_caption("Firework Simulator")
 
-
+Timer = 0
 
 Atomo = ctypes.CDLL("./Atomospheric/Atom_Calculation.so")
 
@@ -57,4 +57,5 @@ while True:
 
     #pg.draw.circle(SimulateDisplay,(255,255,255),(400,400),30)
 
+    Timer += 1
     FramePerSec.tick(FPS)
