@@ -33,7 +33,7 @@ while True:
 
     for event in pg.event.get():
 
-        if event.type == pg.KEYDOWN:
+        if event.type == pg.KEYDOWN: # น฿ป็
             input_text = event.unicode
 
             if len(input_text) == 1:
