@@ -1,0 +1,1989 @@
+{
+  "schema_version": 1,
+  "probe": "facade_fragment_reduction_v0_15b",
+  "complete": true,
+  "iterations_per_stage": 1024,
+  "gpu": {
+    "GL_VENDOR": "Intel",
+    "GL_RENDERER": "Intel(R) Arc(TM) 140V GPU (16GB)",
+    "GL_VERSION": "4.3.0 - Build 32.0.101.8626",
+    "GL_SHADING_LANGUAGE_VERSION": "unknown"
+  },
+  "region_gl_half_open": [
+    598,
+    380,
+    600,
+    384
+  ],
+  "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+  "vertex_shader_sha256": "45b57ec52e893d271a594ebba4b95e33af63e4e590dc624162bc30e4af4ba915",
+  "source_vertex_ranges": [
+    [
+      115194,
+      115197
+    ],
+    [
+      103764,
+      103770
+    ]
+  ],
+  "limitations": [
+    "Same nine-vertex fixture as V0-15A; production initialisation and textures retained.",
+    "Full-frame rasterisation; only the eight-pixel target is read back.",
+    "Reductions affect all non-facade materials, including the surface-12 trigger.",
+    "Facade source unchanged, but compilation may change its executable/output.",
+    "Sequential finite samples do not prove necessity or identify the driver as cause."
+  ],
+  "programs": {
+    "original_before": {
+      "fragment_sha256": "de02c67b45a9a814079d3b2135d7cb218c6b66b976fdf4fe37963417089fd272",
+      "fragment_source_bytes": 36866,
+      "reuses_original_program": true
+    },
+    "recompiled": {
+      "fragment_sha256": "de02c67b45a9a814079d3b2135d7cb218c6b66b976fdf4fe37963417089fd272",
+      "fragment_source_bytes": 36866,
+      "reuses_original_program": false
+    },
+    "no_scan_call": {
+      "fragment_sha256": "2c89bd3ff5da20328fa239a3b604955b156411f703e48c736ea1837bac947acf",
+      "fragment_source_bytes": 36771,
+      "reuses_original_program": false
+    },
+    "no_scan_normal": {
+      "fragment_sha256": "7a2ca85ca5e359038e58d2b2ccaaae56e3c91933d4c39a1d3f58d8ff825b8b87",
+      "fragment_source_bytes": 36524,
+      "reuses_original_program": false
+    },
+    "no_pattern_relief": {
+      "fragment_sha256": "461dcf33ed1c9d4ad74c51d97f238f02812d25b5d116f53d33cde8d9268aa5ec",
+      "fragment_source_bytes": 36857,
+      "reuses_original_program": false
+    },
+    "constant_pattern": {
+      "fragment_sha256": "0909f94196b5215dbb67213e18d1f184afad6f9583a47fde457e335db3acfadc",
+      "fragment_source_bytes": 36832,
+      "reuses_original_program": false
+    },
+    "non_facade_brdf": {
+      "fragment_sha256": "8cf1de87f1f493454f784ad9da4a40b67a89dd08406c0fbcb24131b8ca35e938",
+      "fragment_source_bytes": 28116,
+      "reuses_original_program": false
+    },
+    "non_facade_constant": {
+      "fragment_sha256": "a1a28a06e1bbd34764f04fa4a97843b83aa041821a9b661a29c6e93b5d665cc1",
+      "fragment_source_bytes": 28043,
+      "reuses_original_program": false
+    },
+    "non_facade_discard": {
+      "fragment_sha256": "d6d45c4fd1abb31394ae3405439481428351c45d7645c3f20f2e5ef934fbc22e",
+      "fragment_source_bytes": 27994,
+      "reuses_original_program": false
+    },
+    "original_after": {
+      "fragment_sha256": "de02c67b45a9a814079d3b2135d7cb218c6b66b976fdf4fe37963417089fd272",
+      "fragment_source_bytes": 36866,
+      "reuses_original_program": true
+    }
+  },
+  "stages": {
+    "original_before/full_frame/target_only": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "original_before/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "original_before/full_frame/trigger_then_target": {
+      "bit_deterministic": false,
+      "unique_states": 2,
+      "differing_iterations": 52,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 972
+        },
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 52
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 52,
+          "differing_pixels": 8,
+          "max_abs_rgb": 0.0015726089477539062,
+          "local_rows": [
+            0,
+            3
+          ],
+          "local_columns": [
+            0,
+            1
+          ]
+        }
+      ],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "original_before/full_frame/target_only",
+      "samples_outside_target_control_states": 972
+    },
+    "original_before/full_frame/target_then_trigger": {
+      "bit_deterministic": false,
+      "unique_states": 2,
+      "differing_iterations": 3,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 1021
+        },
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 3
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 3,
+          "differing_pixels": 8,
+          "max_abs_rgb": 0.0015726089477539062,
+          "local_rows": [
+            0,
+            3
+          ],
+          "local_columns": [
+            0,
+            1
+          ]
+        }
+      ],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "target_control": "original_before/full_frame/target_only",
+      "samples_outside_target_control_states": 1021
+    },
+    "original_before/full_frame/target_only_after": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "original_before/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "recompiled/full_frame/target_only": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "recompiled/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "recompiled/full_frame/trigger_then_target": {
+      "bit_deterministic": false,
+      "unique_states": 2,
+      "differing_iterations": 53,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 971
+        },
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 53
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 53,
+          "differing_pixels": 8,
+          "max_abs_rgb": 0.0015726089477539062,
+          "local_rows": [
+            0,
+            3
+          ],
+          "local_columns": [
+            0,
+            1
+          ]
+        }
+      ],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "recompiled/full_frame/target_only",
+      "samples_outside_target_control_states": 971
+    },
+    "recompiled/full_frame/target_then_trigger": {
+      "bit_deterministic": false,
+      "unique_states": 2,
+      "differing_iterations": 2,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 1022
+        },
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 2
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 2,
+          "differing_pixels": 8,
+          "max_abs_rgb": 0.0015726089477539062,
+          "local_rows": [
+            0,
+            3
+          ],
+          "local_columns": [
+            0,
+            1
+          ]
+        }
+      ],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "target_control": "recompiled/full_frame/target_only",
+      "samples_outside_target_control_states": 1022
+    },
+    "recompiled/full_frame/target_only_after": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "recompiled/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "no_scan_call/full_frame/target_only": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "no_scan_call/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "no_scan_call/full_frame/trigger_then_target": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "no_scan_call/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "no_scan_call/full_frame/target_then_trigger": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "target_control": "no_scan_call/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "no_scan_call/full_frame/target_only_after": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "no_scan_call/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "no_scan_normal/full_frame/target_only": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "no_scan_normal/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "no_scan_normal/full_frame/trigger_then_target": {
+      "bit_deterministic": false,
+      "unique_states": 2,
+      "differing_iterations": 47,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 977
+        },
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 47
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 47,
+          "differing_pixels": 8,
+          "max_abs_rgb": 0.0015726089477539062,
+          "local_rows": [
+            0,
+            3
+          ],
+          "local_columns": [
+            0,
+            1
+          ]
+        }
+      ],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "no_scan_normal/full_frame/target_only",
+      "samples_outside_target_control_states": 977
+    },
+    "no_scan_normal/full_frame/target_then_trigger": {
+      "bit_deterministic": false,
+      "unique_states": 2,
+      "differing_iterations": 4,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 1020
+        },
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 4
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 4,
+          "differing_pixels": 8,
+          "max_abs_rgb": 0.0015726089477539062,
+          "local_rows": [
+            0,
+            3
+          ],
+          "local_columns": [
+            0,
+            1
+          ]
+        }
+      ],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "target_control": "no_scan_normal/full_frame/target_only",
+      "samples_outside_target_control_states": 1020
+    },
+    "no_scan_normal/full_frame/target_only_after": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "no_scan_normal/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "no_pattern_relief/full_frame/target_only": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "no_pattern_relief/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "no_pattern_relief/full_frame/trigger_then_target": {
+      "bit_deterministic": false,
+      "unique_states": 2,
+      "differing_iterations": 52,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 972
+        },
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 52
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 52,
+          "differing_pixels": 8,
+          "max_abs_rgb": 0.0015726089477539062,
+          "local_rows": [
+            0,
+            3
+          ],
+          "local_columns": [
+            0,
+            1
+          ]
+        }
+      ],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "no_pattern_relief/full_frame/target_only",
+      "samples_outside_target_control_states": 972
+    },
+    "no_pattern_relief/full_frame/target_then_trigger": {
+      "bit_deterministic": false,
+      "unique_states": 2,
+      "differing_iterations": 4,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 1020
+        },
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 4
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 4,
+          "differing_pixels": 8,
+          "max_abs_rgb": 0.0015726089477539062,
+          "local_rows": [
+            0,
+            3
+          ],
+          "local_columns": [
+            0,
+            1
+          ]
+        }
+      ],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "target_control": "no_pattern_relief/full_frame/target_only",
+      "samples_outside_target_control_states": 1020
+    },
+    "no_pattern_relief/full_frame/target_only_after": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "no_pattern_relief/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "constant_pattern/full_frame/target_only": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "constant_pattern/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "constant_pattern/full_frame/trigger_then_target": {
+      "bit_deterministic": false,
+      "unique_states": 2,
+      "differing_iterations": 43,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 981
+        },
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 43
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 43,
+          "differing_pixels": 8,
+          "max_abs_rgb": 0.0015726089477539062,
+          "local_rows": [
+            0,
+            3
+          ],
+          "local_columns": [
+            0,
+            1
+          ]
+        }
+      ],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "constant_pattern/full_frame/target_only",
+      "samples_outside_target_control_states": 981
+    },
+    "constant_pattern/full_frame/target_then_trigger": {
+      "bit_deterministic": false,
+      "unique_states": 2,
+      "differing_iterations": 6,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 1018
+        },
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 6
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 6,
+          "differing_pixels": 8,
+          "max_abs_rgb": 0.0015726089477539062,
+          "local_rows": [
+            0,
+            3
+          ],
+          "local_columns": [
+            0,
+            1
+          ]
+        }
+      ],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "target_control": "constant_pattern/full_frame/target_only",
+      "samples_outside_target_control_states": 1018
+    },
+    "constant_pattern/full_frame/target_only_after": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "constant_pattern/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "non_facade_brdf/full_frame/target_only": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "non_facade_brdf/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "non_facade_brdf/full_frame/trigger_then_target": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "non_facade_brdf/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "non_facade_brdf/full_frame/target_then_trigger": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "target_control": "non_facade_brdf/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "non_facade_brdf/full_frame/target_only_after": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "non_facade_brdf/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "non_facade_constant/full_frame/target_only": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "non_facade_constant/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "non_facade_constant/full_frame/trigger_then_target": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "non_facade_constant/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "non_facade_constant/full_frame/target_then_trigger": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "target_control": "non_facade_constant/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "non_facade_constant/full_frame/target_only_after": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "non_facade_constant/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "non_facade_discard/full_frame/target_only": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "non_facade_discard/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "non_facade_discard/full_frame/trigger_then_target": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "non_facade_discard/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "non_facade_discard/full_frame/target_then_trigger": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "target_control": "non_facade_discard/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "non_facade_discard/full_frame/target_only_after": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "non_facade_discard/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "original_after/full_frame/target_only": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "original_after/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "original_after/full_frame/trigger_then_target": {
+      "bit_deterministic": false,
+      "unique_states": 2,
+      "differing_iterations": 49,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 975
+        },
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 49
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 49,
+          "differing_pixels": 8,
+          "max_abs_rgb": 0.0015726089477539062,
+          "local_rows": [
+            0,
+            3
+          ],
+          "local_columns": [
+            0,
+            1
+          ]
+        }
+      ],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "original_after/full_frame/target_only",
+      "samples_outside_target_control_states": 975
+    },
+    "original_after/full_frame/target_then_trigger": {
+      "bit_deterministic": false,
+      "unique_states": 2,
+      "differing_iterations": 3,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 1021
+        },
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 3
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 3,
+          "differing_pixels": 8,
+          "max_abs_rgb": 0.0015726089477539062,
+          "local_rows": [
+            0,
+            3
+          ],
+          "local_columns": [
+            0,
+            1
+          ]
+        }
+      ],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "target_control": "original_after/full_frame/target_only",
+      "samples_outside_target_control_states": 1021
+    },
+    "original_after/full_frame/target_only_after": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "original_after/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    }
+  },
+  "control_summary": {
+    "original_before": {
+      "target_controls_stable_and_matching": true,
+      "trigger_effect_observed": true,
+      "orders_outside_target_control": [
+        "trigger_then_target",
+        "target_then_trigger"
+      ]
+    },
+    "recompiled": {
+      "target_controls_stable_and_matching": true,
+      "trigger_effect_observed": true,
+      "orders_outside_target_control": [
+        "trigger_then_target",
+        "target_then_trigger"
+      ]
+    },
+    "no_scan_call": {
+      "target_controls_stable_and_matching": true,
+      "trigger_effect_observed": false,
+      "orders_outside_target_control": []
+    },
+    "no_scan_normal": {
+      "target_controls_stable_and_matching": true,
+      "trigger_effect_observed": true,
+      "orders_outside_target_control": [
+        "trigger_then_target",
+        "target_then_trigger"
+      ]
+    },
+    "no_pattern_relief": {
+      "target_controls_stable_and_matching": true,
+      "trigger_effect_observed": true,
+      "orders_outside_target_control": [
+        "trigger_then_target",
+        "target_then_trigger"
+      ]
+    },
+    "constant_pattern": {
+      "target_controls_stable_and_matching": true,
+      "trigger_effect_observed": true,
+      "orders_outside_target_control": [
+        "trigger_then_target",
+        "target_then_trigger"
+      ]
+    },
+    "non_facade_brdf": {
+      "target_controls_stable_and_matching": true,
+      "trigger_effect_observed": false,
+      "orders_outside_target_control": []
+    },
+    "non_facade_constant": {
+      "target_controls_stable_and_matching": true,
+      "trigger_effect_observed": false,
+      "orders_outside_target_control": []
+    },
+    "non_facade_discard": {
+      "target_controls_stable_and_matching": true,
+      "trigger_effect_observed": false,
+      "orders_outside_target_control": []
+    },
+    "original_after": {
+      "target_controls_stable_and_matching": true,
+      "trigger_effect_observed": true,
+      "orders_outside_target_control": [
+        "trigger_then_target",
+        "target_then_trigger"
+      ]
+    }
+  }
+}

@@ -104,16 +104,58 @@ outside the corresponding target-only control's observed state set.
 
 The environment-BRDF subset stayed in one identical state across all sixteen
 cases. It retains production vertex maths and copied uniforms, but uses synthetic
-material inputs; it is not numerically equivalent to production. No positive
-reduced-fragment reproducer or standalone driver submission is ready yet. Next,
-reduce the surface-12 concrete/scanned-material fragment path while retaining a
-positive full-frame baseline and target-only control. Do not treat finite
+material inputs; it is not numerically equivalent to production. At V0-15A no
+positive reduced-fragment reproducer or standalone driver submission was ready.
+V0-15B below reduces the surface-12 concrete/scanned-material path while retaining
+a positive full-frame baseline and target-only control. Do not treat finite
 sequential zero-hit results as a fix or proof of necessity.
 
 The new probe saves after each stage (`complete: false` until finished), records
 exact geometry and shader hashes, and checks GL errors. GPU regression tests use
 occlusion queries to confirm 8 versus 921,600 covered samples and verify restoration
 of the previous framebuffer's viewport/scissor. Production rendering is unchanged.
+
+V0-15B adds `tools/probe_facade_fragment_reduction.py`. It keeps the production
+vertex source and copies active uniforms byte-for-byte into diagnostic programs.
+The facade suffix is unchanged in source, although recompilation may change its
+executable; each program therefore has its own target-only controls before and
+after both trigger draw orders. Each run also brackets reductions with the
+original program. Drifting target-only controls yield an indeterminate (`null`)
+trigger verdict. Same-source recompilation is an explicit control.
+
+Three reports contain **84 stages of 1,024 draws (86,016 total)** on the same
+Intel driver. Every target-only control remained in `c85f6aac…`; original
+programs remained positive before and after every run. All stages had no GL error.
+
+| Reduction | Observed trigger effect in this sample |
+| --- | --- |
+| Remove scanned normal, remove pattern relief, or make pattern constant | Retained, individually and combined |
+| Remove scanned call entirely | Not observed |
+| Non-facade BRDF only, constant output, or discard | Not observed |
+| Minimal scan + BRDF and four scan variants | Not observed |
+| Preserve concrete calculations; remove other material branches | Retained |
+
+The final `concrete_scan` program has **31,062 source bytes versus 36,866** after
+include expansion (15.7% smaller). Trigger-then-target varied in 47/1,024 samples
+and differed from target-only in 977/1,024; target-then-trigger varied in 5/1,024
+and differed from target-only in 1,019/1,024. Both original hashes remain, with
+`1.572609e-3` maximum RGB delta. The combined normal/relief/pattern reduction also
+remained positive (51 and 7 temporal minority samples). Shader hashes and source
+sizes are recorded per program.
+
+Reports: `fragment_reduction_intel_arc_140v.json` (first eight variants),
+`fragment_reduction_scan_intel_arc_140v.json` (five `scan_brdf*` variants), and
+`fragment_reduction_concrete_intel_arc_140v.json` (combined/concrete variants).
+All runs include original-before/after programs. Positive reduced shaders now
+exist, but they still depend on simulator initialisation, production uniforms and
+textures. This is not a minimal standalone reproducer or an identified driver
+fault. Finite sequential negative samples do not prove a fix or necessity; the
+scan helper's distance cutoff also prevents attributing this far-field case to
+actual texture sampling without further evidence. Production code is unchanged.
+
+Next: combine the successful reductions around `concrete_scan`, then reduce the
+facade/helper dependencies while preserving positive controls, and freeze the
+actual uniforms/textures for an independent-context replay.
 
 Representative commands:
 
@@ -128,6 +170,8 @@ python -m tools.probe_facade_batch_ladder --iterations 2048 --output docs/valida
 python -m tools.probe_facade_draw_threshold --iterations 4096 --output docs/validation/render_determinism_v0/draw_threshold_intel_arc_140v.json
 python -m tools.probe_facade_draw_threshold --compare-compact-order --iterations 8192 --output docs/validation/render_determinism_v0/draw_threshold_compact_order_intel_arc_140v.json
 python -m tools.probe_facade_input_reduction --iterations 1024 --output docs/validation/render_determinism_v0/input_reduction_intel_arc_140v.json
+python -m tools.probe_facade_fragment_reduction --iterations 1024 --output docs/validation/render_determinism_v0/fragment_reduction_all.json
+python -m tools.probe_facade_fragment_reduction --iterations 1024 --variants combined_no_normal_relief_pattern concrete_scan --output docs/validation/render_determinism_v0/fragment_reduction_concrete_intel_arc_140v.json
 ```
 
 Rows are OpenGL rows counted from the bottom. Image-order captures use
