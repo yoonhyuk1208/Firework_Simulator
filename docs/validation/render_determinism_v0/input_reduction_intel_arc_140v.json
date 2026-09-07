@@ -1,0 +1,1575 @@
+{
+  "schema_version": 1,
+  "probe": "facade_input_reduction_v0_15",
+  "complete": true,
+  "iterations_per_stage": 1024,
+  "region_gl_half_open": [
+    598,
+    380,
+    600,
+    384
+  ],
+  "gpu": {
+    "GL_VENDOR": "Intel",
+    "GL_RENDERER": "Intel(R) Arc(TM) 140V GPU (16GB)",
+    "GL_VERSION": "4.3.0 - Build 32.0.101.8626",
+    "GL_SHADING_LANGUAGE_VERSION": "unknown"
+  },
+  "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+  "source_vertex_ranges": [
+    [
+      115194,
+      115197
+    ],
+    [
+      103764,
+      103770
+    ]
+  ],
+  "packed_vertices": [
+    [
+      2156.94384765625,
+      12.050000190734863,
+      -122.69000244140625,
+      -1.0,
+      0.0,
+      0.0,
+      12.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      2156.94384765625,
+      13.430745124816895,
+      -122.69000244140625,
+      -1.0,
+      0.0,
+      0.0,
+      12.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      2156.94384765625,
+      13.430745124816895,
+      -127.30596923828125,
+      -1.0,
+      0.0,
+      0.0,
+      12.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    [
+      814.372802734375,
+      0.0,
+      -743.6793212890625,
+      -0.98124098777771,
+      0.0,
+      -0.1927851289510727,
+      0.0,
+      50.37986373901367,
+      0.0,
+      0.0
+    ],
+    [
+      815.5830688476562,
+      0.0,
+      -749.8392333984375,
+      -0.98124098777771,
+      0.0,
+      -0.1927851289510727,
+      0.0,
+      56.65756607055664,
+      0.0,
+      0.0
+    ],
+    [
+      815.5830688476562,
+      12.0,
+      -749.8392333984375,
+      -0.98124098777771,
+      0.0,
+      -0.1927851289510727,
+      0.0,
+      56.65756607055664,
+      12.0,
+      0.0
+    ],
+    [
+      814.372802734375,
+      0.0,
+      -743.6793212890625,
+      -0.98124098777771,
+      0.0,
+      -0.1927851289510727,
+      0.0,
+      50.37986373901367,
+      0.0,
+      0.0
+    ],
+    [
+      815.5830688476562,
+      12.0,
+      -749.8392333984375,
+      -0.98124098777771,
+      0.0,
+      -0.1927851289510727,
+      0.0,
+      56.65756607055664,
+      12.0,
+      0.0
+    ],
+    [
+      814.372802734375,
+      12.0,
+      -743.6793212890625,
+      -0.98124098777771,
+      0.0,
+      -0.1927851289510727,
+      0.0,
+      50.37986373901367,
+      12.0,
+      0.0
+    ]
+  ],
+  "shader_sha256": {
+    "production_vertex": "45b57ec52e893d271a594ebba4b95e33af63e4e590dc624162bc30e4af4ba915",
+    "production_fragment": "de02c67b45a9a814079d3b2135d7cb218c6b66b976fdf4fe37963417089fd272",
+    "reduced_vertex": "31aac232a7113c9ce0ce4b99f9573673fd393e6a1220a01cdfa91362811bc136",
+    "reduced_fragment": "b359b7165de4dbb5f057cfdb149b721555458293006fe23a557827a2d5448910"
+  },
+  "limitations": [
+    "Full simulator initialisation, production uniforms and textures are retained.",
+    "Reduced BRDF has synthetic material inputs, not production-equivalent colours.",
+    "Sequential finite samples; zero hits do not prove stability or causation.",
+    "baseline_before/after use trigger_then_target; only trigger attributes mutate."
+  ],
+  "stages": {
+    "production/full_frame/baseline_before": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "production/full_frame/target_only",
+      "samples_outside_target_control_states": 1024
+    },
+    "production/full_frame/target_only": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "production/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "production/full_frame/target_then_trigger": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "target_control": "production/full_frame/target_only",
+      "samples_outside_target_control_states": 1024
+    },
+    "production/full_frame/normal_target": {
+      "bit_deterministic": false,
+      "unique_states": 2,
+      "differing_iterations": 61,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 963
+        },
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 61
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 61,
+          "differing_pixels": 8,
+          "max_abs_rgb": 0.0015726089477539062,
+          "local_rows": [
+            0,
+            3
+          ],
+          "local_columns": [
+            0,
+            1
+          ]
+        }
+      ],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "245414cd8798e161fd19bcaf2d1668840b682d8cb79bbc3c9b5ef2ee32bba13c",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "production/full_frame/target_only",
+      "samples_outside_target_control_states": 963
+    },
+    "production/full_frame/surface_target": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "9b8fbabeed61e1f9cf21a00b507cbd9ed461ced9f7f1513ef98d5b8a01eba520",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "production/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "production/full_frame/uv_zero": {
+      "bit_deterministic": false,
+      "unique_states": 2,
+      "differing_iterations": 53,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 971
+        },
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 53
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 53,
+          "differing_pixels": 8,
+          "max_abs_rgb": 0.0015726089477539062,
+          "local_rows": [
+            0,
+            3
+          ],
+          "local_columns": [
+            0,
+            1
+          ]
+        }
+      ],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "f2228d9a6d308e5086fb1c6ffd8886b101c518269c30e708c3ab14dd3fb93435",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "production/full_frame/target_only",
+      "samples_outside_target_control_states": 971
+    },
+    "production/full_frame/position_degenerate": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "a9616d79519b984cd561927bf334ffcbd99bf8568fcb2dc7b500db67628644e7",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "production/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "production/full_frame/baseline_after": {
+      "bit_deterministic": false,
+      "unique_states": 2,
+      "differing_iterations": 57,
+      "states": [
+        {
+          "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+          "count": 967
+        },
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 57
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 57,
+          "differing_pixels": 8,
+          "max_abs_rgb": 0.0015726089477539062,
+          "local_rows": [
+            0,
+            3
+          ],
+          "local_columns": [
+            0,
+            1
+          ]
+        }
+      ],
+      "first_rgb_min": [
+        0.0021648406982421875,
+        0.0022335052490234375,
+        0.002338409423828125
+      ],
+      "first_rgb_max": [
+        0.0021820068359375,
+        0.00225067138671875,
+        0.0023593902587890625
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "production/full_frame/target_only",
+      "samples_outside_target_control_states": 967
+    },
+    "production/region/baseline_before": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "region",
+      "effective_scissor_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "production/region/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "production/region/target_only": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "region",
+      "effective_scissor_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "production/region/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "production/region/target_then_trigger": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "region",
+      "effective_scissor_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "target_control": "production/region/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "production/region/normal_target": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "region",
+      "effective_scissor_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "245414cd8798e161fd19bcaf2d1668840b682d8cb79bbc3c9b5ef2ee32bba13c",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "production/region/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "production/region/surface_target": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "region",
+      "effective_scissor_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "9b8fbabeed61e1f9cf21a00b507cbd9ed461ced9f7f1513ef98d5b8a01eba520",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "production/region/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "production/region/uv_zero": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "region",
+      "effective_scissor_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "f2228d9a6d308e5086fb1c6ffd8886b101c518269c30e708c3ab14dd3fb93435",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "production/region/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "production/region/position_degenerate": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "region",
+      "effective_scissor_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "a9616d79519b984cd561927bf334ffcbd99bf8568fcb2dc7b500db67628644e7",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "production/region/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "production/region/baseline_after": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "region",
+      "effective_scissor_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006113052368164062,
+        0.0006761550903320312,
+        0.0007772445678710938
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007672309875488281,
+        0.0008645057678222656
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "production/region/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "environment_brdf/full_frame/baseline_before": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "2381a9151966714cefeb62e27150f06a66becbb5a84ff24e39686fd52a8612b7",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006036758422851562,
+        0.0006670951843261719,
+        0.0007672309875488281
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007729530334472656,
+        0.0008740425109863281
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "environment_brdf/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "environment_brdf/full_frame/target_only": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "2381a9151966714cefeb62e27150f06a66becbb5a84ff24e39686fd52a8612b7",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006036758422851562,
+        0.0006670951843261719,
+        0.0007672309875488281
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007729530334472656,
+        0.0008740425109863281
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "environment_brdf/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "environment_brdf/full_frame/target_then_trigger": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "2381a9151966714cefeb62e27150f06a66becbb5a84ff24e39686fd52a8612b7",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006036758422851562,
+        0.0006670951843261719,
+        0.0007672309875488281
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007729530334472656,
+        0.0008740425109863281
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "target_control": "environment_brdf/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "environment_brdf/full_frame/normal_target": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "2381a9151966714cefeb62e27150f06a66becbb5a84ff24e39686fd52a8612b7",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006036758422851562,
+        0.0006670951843261719,
+        0.0007672309875488281
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007729530334472656,
+        0.0008740425109863281
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "245414cd8798e161fd19bcaf2d1668840b682d8cb79bbc3c9b5ef2ee32bba13c",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "environment_brdf/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "environment_brdf/full_frame/surface_target": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "2381a9151966714cefeb62e27150f06a66becbb5a84ff24e39686fd52a8612b7",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006036758422851562,
+        0.0006670951843261719,
+        0.0007672309875488281
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007729530334472656,
+        0.0008740425109863281
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "9b8fbabeed61e1f9cf21a00b507cbd9ed461ced9f7f1513ef98d5b8a01eba520",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "environment_brdf/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "environment_brdf/full_frame/uv_zero": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "2381a9151966714cefeb62e27150f06a66becbb5a84ff24e39686fd52a8612b7",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006036758422851562,
+        0.0006670951843261719,
+        0.0007672309875488281
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007729530334472656,
+        0.0008740425109863281
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "f2228d9a6d308e5086fb1c6ffd8886b101c518269c30e708c3ab14dd3fb93435",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "environment_brdf/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "environment_brdf/full_frame/position_degenerate": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "2381a9151966714cefeb62e27150f06a66becbb5a84ff24e39686fd52a8612b7",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006036758422851562,
+        0.0006670951843261719,
+        0.0007672309875488281
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007729530334472656,
+        0.0008740425109863281
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "a9616d79519b984cd561927bf334ffcbd99bf8568fcb2dc7b500db67628644e7",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "environment_brdf/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "environment_brdf/full_frame/baseline_after": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "2381a9151966714cefeb62e27150f06a66becbb5a84ff24e39686fd52a8612b7",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "full_frame",
+      "effective_scissor_xywh": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006036758422851562,
+        0.0006670951843261719,
+        0.0007672309875488281
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007729530334472656,
+        0.0008740425109863281
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "environment_brdf/full_frame/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "environment_brdf/region/baseline_before": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "2381a9151966714cefeb62e27150f06a66becbb5a84ff24e39686fd52a8612b7",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "region",
+      "effective_scissor_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006036758422851562,
+        0.0006670951843261719,
+        0.0007672309875488281
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007729530334472656,
+        0.0008740425109863281
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "environment_brdf/region/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "environment_brdf/region/target_only": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "2381a9151966714cefeb62e27150f06a66becbb5a84ff24e39686fd52a8612b7",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "region",
+      "effective_scissor_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006036758422851562,
+        0.0006670951843261719,
+        0.0007672309875488281
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007729530334472656,
+        0.0008740425109863281
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "environment_brdf/region/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "environment_brdf/region/target_then_trigger": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "2381a9151966714cefeb62e27150f06a66becbb5a84ff24e39686fd52a8612b7",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "region",
+      "effective_scissor_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006036758422851562,
+        0.0006670951843261719,
+        0.0007672309875488281
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007729530334472656,
+        0.0008740425109863281
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+      "draw_ranges_first_count": [
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "target_control": "environment_brdf/region/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "environment_brdf/region/normal_target": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "2381a9151966714cefeb62e27150f06a66becbb5a84ff24e39686fd52a8612b7",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "region",
+      "effective_scissor_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006036758422851562,
+        0.0006670951843261719,
+        0.0007672309875488281
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007729530334472656,
+        0.0008740425109863281
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "245414cd8798e161fd19bcaf2d1668840b682d8cb79bbc3c9b5ef2ee32bba13c",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "environment_brdf/region/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "environment_brdf/region/surface_target": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "2381a9151966714cefeb62e27150f06a66becbb5a84ff24e39686fd52a8612b7",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "region",
+      "effective_scissor_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006036758422851562,
+        0.0006670951843261719,
+        0.0007672309875488281
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007729530334472656,
+        0.0008740425109863281
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "9b8fbabeed61e1f9cf21a00b507cbd9ed461ced9f7f1513ef98d5b8a01eba520",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "environment_brdf/region/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "environment_brdf/region/uv_zero": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "2381a9151966714cefeb62e27150f06a66becbb5a84ff24e39686fd52a8612b7",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "region",
+      "effective_scissor_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006036758422851562,
+        0.0006670951843261719,
+        0.0007672309875488281
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007729530334472656,
+        0.0008740425109863281
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "f2228d9a6d308e5086fb1c6ffd8886b101c518269c30e708c3ab14dd3fb93435",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "environment_brdf/region/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "environment_brdf/region/position_degenerate": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "2381a9151966714cefeb62e27150f06a66becbb5a84ff24e39686fd52a8612b7",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "region",
+      "effective_scissor_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006036758422851562,
+        0.0006670951843261719,
+        0.0007672309875488281
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007729530334472656,
+        0.0008740425109863281
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "a9616d79519b984cd561927bf334ffcbd99bf8568fcb2dc7b500db67628644e7",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "environment_brdf/region/target_only",
+      "samples_outside_target_control_states": 0
+    },
+    "environment_brdf/region/baseline_after": {
+      "bit_deterministic": true,
+      "unique_states": 1,
+      "differing_iterations": 0,
+      "states": [
+        {
+          "sha256": "2381a9151966714cefeb62e27150f06a66becbb5a84ff24e39686fd52a8612b7",
+          "count": 1024
+        }
+      ],
+      "raster_scope": "region",
+      "effective_scissor_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "differences_from_dominant": [],
+      "first_rgb_min": [
+        0.0006036758422851562,
+        0.0006670951843261719,
+        0.0007672309875488281
+      ],
+      "first_rgb_max": [
+        0.000705718994140625,
+        0.0007729530334472656,
+        0.0008740425109863281
+      ],
+      "gl_error": "GL_NO_ERROR",
+      "input_sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128",
+      "draw_ranges_first_count": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "target_control": "environment_brdf/region/target_only",
+      "samples_outside_target_control_states": 0
+    }
+  },
+  "varying_stages": [
+    "production/full_frame/normal_target",
+    "production/full_frame/uv_zero",
+    "production/full_frame/baseline_after"
+  ]
+}

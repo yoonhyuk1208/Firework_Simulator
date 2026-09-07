@@ -36,6 +36,13 @@ isolation ladder should add the 1280x720 viewport and original pixel location,
 actual facade triangle interpolation, depth attachment/test, and the complete
 scene program in that order.
 
+**2026-09-07 measurement correction:** V0-12 through V0-14 set scissor before
+binding their measurement framebuffer. ModernGL restored that framebuffer's
+full-frame scissor at bind time. Those historical JSON files therefore describe
+full-frame rasterisation with an eight-pixel readback, not eight-pixel raster
+isolation. They are preserved unchanged. A driver fault remains a hypothesis,
+not an established cause. The corrected helper records its effective scissor.
+
 V0-12 implements that ladder in `tools/probe_facade_pass_ladder.py`. The tool
 projects the source building mesh and locks the frontmost covering pair to
 triangles 34588-34589 (vertices 103764-103769), then cumulatively adds the
@@ -82,6 +89,32 @@ The `draw_threshold_*_intel_arc_140v.json` reports preserve the complete search.
 The next step is to neutralise each trigger-triangle attribute and shrink the
 production fragment shader around this nine-vertex reproducer.
 
+V0-15A implements that comparison in `tools/probe_facade_input_reduction.py`.
+`input_reduction_intel_arc_140v.json` contains 32 stages of 1,024 draws each on
+the same driver. Production/full-frame normal replacement, zero UV and the final
+baseline varied in 61, 53 and 57 samples respectively, with the original two
+hashes and `1.572609e-3` maximum RGB delta. All eight genuinely scissored
+production cases matched the target-only `c85f6aac…` state. Full-frame surface
+replacement (12 to 0) and position degeneration also matched that state.
+
+Temporal stability alone is not equivalence: the first full-frame baseline and
+target-then-trigger control each remained in `ec5e576a…` for all 1,024 samples,
+while target-only stayed in `c85f6aac…`. The report separately counts samples
+outside the corresponding target-only control's observed state set.
+
+The environment-BRDF subset stayed in one identical state across all sixteen
+cases. It retains production vertex maths and copied uniforms, but uses synthetic
+material inputs; it is not numerically equivalent to production. No positive
+reduced-fragment reproducer or standalone driver submission is ready yet. Next,
+reduce the surface-12 concrete/scanned-material fragment path while retaining a
+positive full-frame baseline and target-only control. Do not treat finite
+sequential zero-hit results as a fix or proof of necessity.
+
+The new probe saves after each stage (`complete: false` until finished), records
+exact geometry and shader hashes, and checks GL errors. GPU regression tests use
+occlusion queries to confirm 8 versus 921,600 covered samples and verify restoration
+of the previous framebuffer's viewport/scissor. Production rendering is unchanged.
+
 Representative commands:
 
 ```powershell
@@ -94,6 +127,7 @@ python -m tools.probe_facade_pass_ladder --iterations 1024 --output docs/validat
 python -m tools.probe_facade_batch_ladder --iterations 2048 --output docs/validation/render_determinism_v0/batch_ladder_intel_arc_140v.json
 python -m tools.probe_facade_draw_threshold --iterations 4096 --output docs/validation/render_determinism_v0/draw_threshold_intel_arc_140v.json
 python -m tools.probe_facade_draw_threshold --compare-compact-order --iterations 8192 --output docs/validation/render_determinism_v0/draw_threshold_compact_order_intel_arc_140v.json
+python -m tools.probe_facade_input_reduction --iterations 1024 --output docs/validation/render_determinism_v0/input_reduction_intel_arc_140v.json
 ```
 
 Rows are OpenGL rows counted from the bottom. Image-order captures use

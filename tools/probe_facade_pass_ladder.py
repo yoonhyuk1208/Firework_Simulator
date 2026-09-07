@@ -193,10 +193,10 @@ def locate_residual_quad(scene_path: Path = SCENE_ASSET) -> ResidualQuad:
     )
 
 
-def ladder_fragment_source(*, interpolated: bool) -> str:
-    """Adapt the V0-11 final shader to the original framebuffer coordinates."""
+def ladder_fragment_source(*, interpolated: bool, stage: str = "final_facade") -> str:
+    """Adapt a V0-11 shader stage to the original framebuffer coordinates."""
 
-    source = fragment_source("final_facade")
+    source = fragment_source(stage)
     replacements = [(_LOCAL_PIXEL_INDEX, _FRAME_PIXEL_INDEX)]
     if interpolated:
         source = source.replace(
@@ -284,15 +284,24 @@ def _measure_draws(
     draw: Callable[[], None],
     *,
     depth: bool,
+    scissor_region: bool = True,
 ) -> dict[str, Any]:
+    if iterations < 2:
+        raise ValueError("iterations must be at least 2")
+    previous_framebuffer = ctx.fbo
+    previous_viewport = ctx.viewport
+    previous_scissor = ctx.scissor
     colour = ctx.texture(FRAME_SIZE, components=4, dtype="f2")
     depth_texture = ctx.depth_texture(FRAME_SIZE) if depth else None
     framebuffer = ctx.framebuffer(
         [colour], depth_attachment=depth_texture
     )
     try:
-        ctx.scissor = REGION_GL
-        ctx.viewport = (0, 0, *FRAME_SIZE)
+        # ModernGL stores viewport/scissor per framebuffer. Setting ctx.scissor
+        # before use() configures the previous target and is lost at the bind.
+        framebuffer.use()
+        framebuffer.viewport = (0, 0, *FRAME_SIZE)
+        framebuffer.scissor = REGION_GL if scissor_region else None
         ctx.disable(moderngl.BLEND)
         if depth:
             ctx.enable(moderngl.DEPTH_TEST)
@@ -302,6 +311,8 @@ def _measure_draws(
         first: np.ndarray | None = None
         for _ in range(iterations):
             framebuffer.use()
+            if ctx.scissor != (REGION_GL if scissor_region else (0, 0, *FRAME_SIZE)):
+                raise RuntimeError("probe framebuffer scissor changed")
             framebuffer.clear(0.0, 0.0, 0.0, 1.0, depth=1.0)
             draw()
             ctx.finish()
@@ -310,6 +321,8 @@ def _measure_draws(
             if first is None:
                 first = np.frombuffer(raw, dtype=np.float16).reshape(4, 2, 4)
         summary = _summarize_states(states, iterations)
+        summary["raster_scope"] = "region" if scissor_region else "full_frame"
+        summary["effective_scissor_xywh"] = list(ctx.scissor)
         summary["differences_from_dominant"] = _state_differences(states)
         assert first is not None
         summary["first_rgb_min"] = (
@@ -320,7 +333,10 @@ def _measure_draws(
         )
         return summary
     finally:
-        ctx.scissor = None
+        if previous_framebuffer is not None:
+            previous_framebuffer.use()
+        ctx.viewport = previous_viewport
+        ctx.scissor = previous_scissor
         framebuffer.release()
         if depth_texture is not None:
             depth_texture.release()
