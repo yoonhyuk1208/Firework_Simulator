@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "probe": "facade_terrain_substitution_v0_15d",
+  "source_snapshot_sha256": "8d1a25423a677895d1444055e0fb42c580792585c4967893c7fa29480fc57e32",
+  "output_snapshot_sha256": "ad2df3e3ae0f5cdb613ccfcd391eb25fcb88ce7f7d62108a8888c5325e45c8b8",
+  "output_bytes": 31300751,
+  "fill": "ramp",
+  "halo": 2,
+  "retained_texels": 70,
+  "retained_bytes": 280,
+  "total_texels": 1048576,
+  "retained_fraction": 6.67572021484375e-05,
+  "texels_changed": 1048506,
+  "source_terrain_sha256": "ac58b5cb13396a502869ad73c48241581b9d8a49669c9b18190c3a0098492000",
+  "limitations": [
+    "Position preservation is exact only outside the retained halo; it is asserted, not assumed.",
+    "A positive replay shows the substitution keeps the phenomenon, not that terrain content is irrelevant in general."
+  ]
+}
