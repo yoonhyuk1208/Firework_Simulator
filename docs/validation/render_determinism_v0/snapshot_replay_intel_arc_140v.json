@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "probe": "facade_snapshot_replay_v0_15c",
+  "complete": true,
+  "gpu": {
+    "GL_VENDOR": "Intel",
+    "GL_RENDERER": "Intel(R) Arc(TM) 140V GPU (16GB)",
+    "GL_VERSION": "4.3.0 - Build 32.0.101.8626"
+  },
+  "iterations_per_case": 1024,
+  "snapshot_sha256": "8d1a25423a677895d1444055e0fb42c580792585c4967893c7fa29480fc57e32",
+  "simulator_modules_loaded": [],
+  "results": {
+    "original": {
+      "cases": {
+        "target_only": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "trigger_then_target": {
+          "unique_states": 2,
+          "differing_iterations": 188,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 836
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 188
+            }
+          ],
+          "samples_outside_target_control": 836,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_then_trigger": {
+          "unique_states": 2,
+          "differing_iterations": 184,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 840
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 184
+            }
+          ],
+          "samples_outside_target_control": 840,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_only_after": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        }
+      },
+      "target_controls_stable": true,
+      "trigger_effect_observed": true
+    },
+    "concrete_scan": {
+      "cases": {
+        "target_only": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "trigger_then_target": {
+          "unique_states": 2,
+          "differing_iterations": 30,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 994
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 30
+            }
+          ],
+          "samples_outside_target_control": 994,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_then_trigger": {
+          "unique_states": 2,
+          "differing_iterations": 14,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 1010
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 14
+            }
+          ],
+          "samples_outside_target_control": 1010,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_only_after": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        }
+      },
+      "target_controls_stable": true,
+      "trigger_effect_observed": true
+    },
+    "concrete_combined": {
+      "cases": {
+        "target_only": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "trigger_then_target": {
+          "unique_states": 2,
+          "differing_iterations": 53,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 971
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 53
+            }
+          ],
+          "samples_outside_target_control": 971,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_then_trigger": {
+          "unique_states": 2,
+          "differing_iterations": 59,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 965
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 59
+            }
+          ],
+          "samples_outside_target_control": 965,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_only_after": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        }
+      },
+      "target_controls_stable": true,
+      "trigger_effect_observed": true
+    }
+  },
+  "limitations": [
+    "Exact resource replay is not a complete capture of prior driver/context history.",
+    "Finite samples do not prove stability, necessity or a driver fault."
+  ]
+}

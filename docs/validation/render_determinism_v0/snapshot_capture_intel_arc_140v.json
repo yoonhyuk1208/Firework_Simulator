@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "probe": "facade_snapshot_capture_v0_15c",
+  "complete": true,
+  "gpu": {
+    "GL_VENDOR": "Intel",
+    "GL_RENDERER": "Intel(R) Arc(TM) 140V GPU (16GB)",
+    "GL_VERSION": "4.3.0 - Build 32.0.101.8626"
+  },
+  "iterations_per_case": 1024,
+  "snapshot_sha256": "8d1a25423a677895d1444055e0fb42c580792585c4967893c7fa29480fc57e32",
+  "snapshot_bytes": 32141327,
+  "manifest": {
+    "schema_version": 1,
+    "gpu": {
+      "GL_VENDOR": "Intel",
+      "GL_RENDERER": "Intel(R) Arc(TM) 140V GPU (16GB)",
+      "GL_VERSION": "4.3.0 - Build 32.0.101.8626"
+    },
+    "context_require": 430,
+    "programs": {
+      "original": {
+        "fragment": "shaders/original.frag",
+        "uniforms": {
+          "blade_cutoff_m": "eb7d7c42",
+          "blade_full_detail_m": "f253a841",
+          "camera_position": "0000c8c2bde3444100008243",
+          "terrain_bounds": "00401cc50000fac400401c450000fa44",
+          "terrain_height": "02000000",
+          "time_s": "00000000",
+          "tree_sway_cutoff_m": "ed746a42",
+          "view_projection": "ef5b713f06b8ed3cb601353f01fe343f0000000054ae1740e8d68dbc01d48dbcef5b713f06b8edbcb60135bf01fe34bf76d916c31dbe95c1bf8d7e43bcbb7e43",
+          "wind_speed_mps": "f05bf13e",
+          "wind_xz": "abaaaa3eabaaaa3e",
+          "aerosol_extinction_per_m": "76b44439f00b6139a7f28d39",
+          "aerosol_scale_height_m": "00009644",
+          "ambient_irradiance_w_m2": "44ee443c",
+          "dynamic_light_color": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "dynamic_light_count": "00000000",
+          "dynamic_light_position": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "dynamic_light_power_w": "0000000000000000000000000000000000000000000000000000000000000000",
+          "material_base_primary": "ec51383ecdcc4c3e1f856b3e8fc2f53db81e053e295c0f3eae47613e8fc2753eb81e853e295c0f3de3a51b3d31082c3d31082c3d3d0ad73df4fdd43c8fc2753e1f856b3e3d0a573e5c8f423eec51383d6f12033d295c0f3db81e053e9a99993dec51383eec51383eec51383e8fc2f53dcdcc4c3dbc74933cae47613eae47613eae47613ef4fdd43c77be9f3d8fc2753c3d0a573e3d0a573e3d0a573e8fc2f53d295c0f3dcdcccc3c295c0f3dae47e13dcdcccc3c0ad7233eb81e053e5c8fc23d8fc2f53cc520b03d6f12833ca4703d3e5c8f423ea4703d3e295c8f3d3d0ad73d295c0f3d",
+          "material_base_secondary": "cdcccc3c31082c3d9a99993d8fc2f53db81e053e295c0f3eae47613e8fc2753eb81e853e295c0f3de3a51b3d31082c3d0000003e3333333eec51383dec51b83dec51b83dec51b83d5c8f423eec51383d6f12033d0000403f0000403f0000403f3d0ad73e3d0ad73e3d0ad73e295c8f3eb81e053eec51383dae47613eae47613eae47613e8fc2753e52b81e3ea69bc43c9a99193e9a99193e9a99193e295c0f3dcdcccc3d8fc2f53d7b142e3eae47613dcdcccc3cb81e853eae47613e0ad7233e8fc2f53d7b142e3ebc74133d3d0ad73d1f85eb3d3d0ad73dcdcc4c3ee17a143e9a99993d",
+          "material_emissive": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000803f8fc2f53eb81e053e6666e63f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "material_pattern": "000020410000803f0000803f0000803f000020410000803f0000803f0000803f000000000000803f0000803f0000803f000000000000803f0000803f0000803f0000803f9a99193e9a99193ee17a143f0000e0403d0ad73e295c8f3e0000803f000000000000000000000000000000000000c040cdcc4c3dcdcc4c3d0000803f000010410000803f0000803f0000803f000000406666e63fec51383e0000803f000000000000803f0000803f0000803f000040406666263f6666263f3d0ad73e0000a040ae47613eae47613e8fc2f53d000080400000803e0000803e0000803f0000803f0ad7a33e0ad7a33e7b14ae3e0000803fcdccac3fcdccac3f0000803f0000803f000010410000104152b81e3f0000a0403d0ad73ecdcc4c3eec51383e0000803fec51b83eec51b83e6666e63e",
+          "material_reflectance": "3333b33e000000001f856b3f0000000014ae473f000000009a99593f0000000085eb513f000000006666663f00000000ae47613f00000000d7a3703f000000003333733f00000000ae47613fcdcccc3df6285c3f000000007b146e3f0000000052b85e3f00000000d7a3703f000000006666663f000000001f856b3f000000009a99993e9a99593fae47613f00000000cdcc4c3f000000006666663f00000000cdcccc3e9a99993e0000803f00000000d7a3703f00000000ec51383fae47613e3d0a573f000000006666663f000000001f856b3f000000006666663f000000007b146e3f0000000085eb513f0ad7a33dc3f5683f000000001f856b3f000000008fc2753f00000000cdcc4c3f3333b33ec3f5683f00000000f6285c3f000000008fc2753f000000003d0a573f00000000",
+          "material_relief": "00000000000000000000000000000000000000000000000000000000000000000000803f00000000000000006f12833b000000000000000000000000000000000000000000000000000000006f12033b0000000000000000000000000000000000000000a69bc43b00000000a69b443b000000000000000000000000000000000000000000000000000000006f12033c000000000ad7233c",
+          "molecular_extinction_per_m": "0f42fd36b6134137addac837",
+          "molecular_scale_height_m": "00d00446",
+          "scanned_diffuse_mean": "c0be7a3ef7f1693ec0555d3edb01103e9170eb3d1af7b23d02d8a63ea294753e8c60d73de9a8343ecd771a3ef287dc3d",
+          "scanned_material_texture": "0e000000",
+          "scanned_texture_width_m": "000080403333f33f0000004000008040",
+          "static_light_color": "0000803fae47213f52b89e3e",
+          "static_light_count": "00000000",
+          "static_light_position": "176194c24160dd40ac296643c12d0ec34160dd40073d844324bdcdc24160dd4063c8544360cb05c34160dd40d7229643",
+          "static_light_power_w": "b8a7f541",
+          "window_radiance_w_m2_sr": "ffcd323e"
+        }
+      },
+      "concrete_scan": {
+        "fragment": "shaders/concrete_scan.frag",
+        "uniforms": {
+          "blade_cutoff_m": "eb7d7c42",
+          "blade_full_detail_m": "f253a841",
+          "camera_position": "0000c8c2bde3444100008243",
+          "terrain_bounds": "00401cc50000fac400401c450000fa44",
+          "terrain_height": "02000000",
+          "time_s": "00000000",
+          "tree_sway_cutoff_m": "ed746a42",
+          "view_projection": "ef5b713f06b8ed3cb601353f01fe343f0000000054ae1740e8d68dbc01d48dbcef5b713f06b8edbcb60135bf01fe34bf76d916c31dbe95c1bf8d7e43bcbb7e43",
+          "wind_speed_mps": "f05bf13e",
+          "wind_xz": "abaaaa3eabaaaa3e",
+          "aerosol_extinction_per_m": "76b44439f00b6139a7f28d39",
+          "aerosol_scale_height_m": "00009644",
+          "ambient_irradiance_w_m2": "44ee443c",
+          "dynamic_light_color": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "dynamic_light_count": "00000000",
+          "dynamic_light_position": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "dynamic_light_power_w": "0000000000000000000000000000000000000000000000000000000000000000",
+          "material_base_primary": "ec51383ecdcc4c3e1f856b3e8fc2f53db81e053e295c0f3eae47613e8fc2753eb81e853e295c0f3de3a51b3d31082c3d31082c3d3d0ad73df4fdd43c8fc2753e1f856b3e3d0a573e5c8f423eec51383d6f12033d295c0f3db81e053e9a99993dec51383eec51383eec51383e8fc2f53dcdcc4c3dbc74933cae47613eae47613eae47613ef4fdd43c77be9f3d8fc2753c3d0a573e3d0a573e3d0a573e8fc2f53d295c0f3dcdcccc3c295c0f3dae47e13dcdcccc3c0ad7233eb81e053e5c8fc23d8fc2f53cc520b03d6f12833ca4703d3e5c8f423ea4703d3e295c8f3d3d0ad73d295c0f3d",
+          "material_base_secondary": "cdcccc3c31082c3d9a99993d8fc2f53db81e053e295c0f3eae47613e8fc2753eb81e853e295c0f3de3a51b3d31082c3d0000003e3333333eec51383dec51b83dec51b83dec51b83d5c8f423eec51383d6f12033d0000403f0000403f0000403f3d0ad73e3d0ad73e3d0ad73e295c8f3eb81e053eec51383dae47613eae47613eae47613e8fc2753e52b81e3ea69bc43c9a99193e9a99193e9a99193e295c0f3dcdcccc3d8fc2f53d7b142e3eae47613dcdcccc3cb81e853eae47613e0ad7233e8fc2f53d7b142e3ebc74133d3d0ad73d1f85eb3d3d0ad73dcdcc4c3ee17a143e9a99993d",
+          "material_emissive": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000803f8fc2f53eb81e053e6666e63f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "material_pattern": "000020410000803f0000803f0000803f000020410000803f0000803f0000803f000000000000803f0000803f0000803f000000000000803f0000803f0000803f0000803f9a99193e9a99193ee17a143f0000e0403d0ad73e295c8f3e0000803f000000000000000000000000000000000000c040cdcc4c3dcdcc4c3d0000803f000010410000803f0000803f0000803f000000406666e63fec51383e0000803f000000000000803f0000803f0000803f000040406666263f6666263f3d0ad73e0000a040ae47613eae47613e8fc2f53d000080400000803e0000803e0000803f0000803f0ad7a33e0ad7a33e7b14ae3e0000803fcdccac3fcdccac3f0000803f0000803f000010410000104152b81e3f0000a0403d0ad73ecdcc4c3eec51383e0000803fec51b83eec51b83e6666e63e",
+          "material_reflectance": "3333b33e000000001f856b3f0000000014ae473f000000009a99593f0000000085eb513f000000006666663f00000000ae47613f00000000d7a3703f000000003333733f00000000ae47613fcdcccc3df6285c3f000000007b146e3f0000000052b85e3f00000000d7a3703f000000006666663f000000001f856b3f000000009a99993e9a99593fae47613f00000000cdcc4c3f000000006666663f00000000cdcccc3e9a99993e0000803f00000000d7a3703f00000000ec51383fae47613e3d0a573f000000006666663f000000001f856b3f000000006666663f000000007b146e3f0000000085eb513f0ad7a33dc3f5683f000000001f856b3f000000008fc2753f00000000cdcc4c3f3333b33ec3f5683f00000000f6285c3f000000008fc2753f000000003d0a573f00000000",
+          "material_relief": "00000000000000000000000000000000000000000000000000000000000000000000803f00000000000000006f12833b000000000000000000000000000000000000000000000000000000006f12033b0000000000000000000000000000000000000000a69bc43b00000000a69b443b000000000000000000000000000000000000000000000000000000006f12033c000000000ad7233c",
+          "molecular_extinction_per_m": "0f42fd36b6134137addac837",
+          "molecular_scale_height_m": "00d00446",
+          "scanned_diffuse_mean": "c0be7a3ef7f1693ec0555d3edb01103e9170eb3d1af7b23d02d8a63ea294753e8c60d73de9a8343ecd771a3ef287dc3d",
+          "scanned_material_texture": "0e000000",
+          "scanned_texture_width_m": "000080403333f33f0000004000008040",
+          "static_light_color": "0000803fae47213f52b89e3e",
+          "static_light_count": "00000000",
+          "static_light_position": "176194c24160dd40ac296643c12d0ec34160dd40073d844324bdcdc24160dd4063c8544360cb05c34160dd40d7229643",
+          "static_light_power_w": "b8a7f541",
+          "window_radiance_w_m2_sr": "ffcd323e"
+        }
+      },
+      "concrete_combined": {
+        "fragment": "shaders/concrete_combined.frag",
+        "uniforms": {
+          "blade_cutoff_m": "eb7d7c42",
+          "blade_full_detail_m": "f253a841",
+          "camera_position": "0000c8c2bde3444100008243",
+          "terrain_bounds": "00401cc50000fac400401c450000fa44",
+          "terrain_height": "02000000",
+          "time_s": "00000000",
+          "tree_sway_cutoff_m": "ed746a42",
+          "view_projection": "ef5b713f06b8ed3cb601353f01fe343f0000000054ae1740e8d68dbc01d48dbcef5b713f06b8edbcb60135bf01fe34bf76d916c31dbe95c1bf8d7e43bcbb7e43",
+          "wind_speed_mps": "f05bf13e",
+          "wind_xz": "abaaaa3eabaaaa3e",
+          "aerosol_extinction_per_m": "76b44439f00b6139a7f28d39",
+          "aerosol_scale_height_m": "00009644",
+          "ambient_irradiance_w_m2": "44ee443c",
+          "dynamic_light_color": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "dynamic_light_count": "00000000",
+          "dynamic_light_position": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "dynamic_light_power_w": "0000000000000000000000000000000000000000000000000000000000000000",
+          "material_base_primary": "ec51383ecdcc4c3e1f856b3e8fc2f53db81e053e295c0f3eae47613e8fc2753eb81e853e295c0f3de3a51b3d31082c3d31082c3d3d0ad73df4fdd43c8fc2753e1f856b3e3d0a573e5c8f423eec51383d6f12033d295c0f3db81e053e9a99993dec51383eec51383eec51383e8fc2f53dcdcc4c3dbc74933cae47613eae47613eae47613ef4fdd43c77be9f3d8fc2753c3d0a573e3d0a573e3d0a573e8fc2f53d295c0f3dcdcccc3c295c0f3dae47e13dcdcccc3c0ad7233eb81e053e5c8fc23d8fc2f53cc520b03d6f12833ca4703d3e5c8f423ea4703d3e295c8f3d3d0ad73d295c0f3d",
+          "material_base_secondary": "cdcccc3c31082c3d9a99993d8fc2f53db81e053e295c0f3eae47613e8fc2753eb81e853e295c0f3de3a51b3d31082c3d0000003e3333333eec51383dec51b83dec51b83dec51b83d5c8f423eec51383d6f12033d0000403f0000403f0000403f3d0ad73e3d0ad73e3d0ad73e295c8f3eb81e053eec51383dae47613eae47613eae47613e8fc2753e52b81e3ea69bc43c9a99193e9a99193e9a99193e295c0f3dcdcccc3d8fc2f53d7b142e3eae47613dcdcccc3cb81e853eae47613e0ad7233e8fc2f53d7b142e3ebc74133d3d0ad73d1f85eb3d3d0ad73dcdcc4c3ee17a143e9a99993d",
+          "material_emissive": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000803f8fc2f53eb81e053e6666e63f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "material_pattern": "000020410000803f0000803f0000803f000020410000803f0000803f0000803f000000000000803f0000803f0000803f000000000000803f0000803f0000803f0000803f9a99193e9a99193ee17a143f0000e0403d0ad73e295c8f3e0000803f000000000000000000000000000000000000c040cdcc4c3dcdcc4c3d0000803f000010410000803f0000803f0000803f000000406666e63fec51383e0000803f000000000000803f0000803f0000803f000040406666263f6666263f3d0ad73e0000a040ae47613eae47613e8fc2f53d000080400000803e0000803e0000803f0000803f0ad7a33e0ad7a33e7b14ae3e0000803fcdccac3fcdccac3f0000803f0000803f000010410000104152b81e3f0000a0403d0ad73ecdcc4c3eec51383e0000803fec51b83eec51b83e6666e63e",
+          "material_reflectance": "3333b33e000000001f856b3f0000000014ae473f000000009a99593f0000000085eb513f000000006666663f00000000ae47613f00000000d7a3703f000000003333733f00000000ae47613fcdcccc3df6285c3f000000007b146e3f0000000052b85e3f00000000d7a3703f000000006666663f000000001f856b3f000000009a99993e9a99593fae47613f00000000cdcc4c3f000000006666663f00000000cdcccc3e9a99993e0000803f00000000d7a3703f00000000ec51383fae47613e3d0a573f000000006666663f000000001f856b3f000000006666663f000000007b146e3f0000000085eb513f0ad7a33dc3f5683f000000001f856b3f000000008fc2753f00000000cdcc4c3f3333b33ec3f5683f00000000f6285c3f000000008fc2753f000000003d0a573f00000000",
+          "material_relief": "00000000000000000000000000000000000000000000000000000000000000000000803f00000000000000006f12833b000000000000000000000000000000000000000000000000000000006f12033b0000000000000000000000000000000000000000a69bc43b00000000a69b443b000000000000000000000000000000000000000000000000000000006f12033c000000000ad7233c",
+          "molecular_extinction_per_m": "0f42fd36b6134137addac837",
+          "molecular_scale_height_m": "00d00446",
+          "scanned_diffuse_mean": "c0be7a3ef7f1693ec0555d3edb01103e9170eb3d1af7b23d02d8a63ea294753e8c60d73de9a8343ecd771a3ef287dc3d",
+          "scanned_material_texture": "0e000000",
+          "scanned_texture_width_m": "000080403333f33f0000004000008040",
+          "static_light_color": "0000803fae47213f52b89e3e",
+          "static_light_count": "00000000",
+          "static_light_position": "176194c24160dd40ac296643c12d0ec34160dd40073d844324bdcdc24160dd4063c8544360cb05c34160dd40d7229643",
+          "static_light_power_w": "b8a7f541",
+          "window_radiance_w_m2_sr": "ffcd323e"
+        }
+      }
+    },
+    "textures": [
+      {
+        "name": "terrain",
+        "size": [
+          1024,
+          1024
+        ],
+        "components": 1,
+        "dtype": "f4",
+        "unit": 2,
+        "array": false,
+        "filter": [
+          9729,
+          9729
+        ],
+        "repeat_x": false,
+        "repeat_y": false,
+        "levels": [
+          "textures/terrain/0.bin"
+        ]
+      },
+      {
+        "name": "scanned",
+        "size": [
+          1024,
+          1024,
+          12
+        ],
+        "components": 3,
+        "dtype": "f1",
+        "unit": 14,
+        "array": true,
+        "filter": [
+          9987,
+          9729
+        ],
+        "repeat_x": true,
+        "repeat_y": true,
+        "levels": [
+          "textures/scanned/0.bin",
+          "textures/scanned/1.bin",
+          "textures/scanned/2.bin",
+          "textures/scanned/3.bin",
+          "textures/scanned/4.bin",
+          "textures/scanned/5.bin",
+          "textures/scanned/6.bin",
+          "textures/scanned/7.bin",
+          "textures/scanned/8.bin",
+          "textures/scanned/9.bin",
+          "textures/scanned/10.bin"
+        ],
+        "anisotropy": 8.0
+      }
+    ],
+    "measurement": {
+      "frame_size": [
+        1280,
+        720
+      ],
+      "region_xywh": [
+        598,
+        380,
+        2,
+        4
+      ],
+      "full_frame_raster": true,
+      "depth_func": "<",
+      "colour_dtype": "f2"
+    },
+    "files": {
+      "vertices.bin": {
+        "bytes": 360,
+        "sha256": "3df684e41c282e4088a1bec2f0f01fc0ccb0d74225f9b7b76b11a1e1ecfc0128"
+      },
+      "scene.vert": {
+        "bytes": 5552,
+        "sha256": "45b57ec52e893d271a594ebba4b95e33af63e4e590dc624162bc30e4af4ba915"
+      },
+      "shaders/original.frag": {
+        "bytes": 36866,
+        "sha256": "de02c67b45a9a814079d3b2135d7cb218c6b66b976fdf4fe37963417089fd272"
+      },
+      "shaders/concrete_scan.frag": {
+        "bytes": 31062,
+        "sha256": "e6470b703917452e51131714664a42543638aef477742a7be34163b87ad86bdd"
+      },
+      "shaders/concrete_combined.frag": {
+        "bytes": 30677,
+        "sha256": "389e7321517e5751b23296bf99fafcc8d12a07b4f6dc64eb7c5b1e9120d2b4da"
+      },
+      "textures/terrain/0.bin": {
+        "bytes": 4194304,
+        "sha256": "ac58b5cb13396a502869ad73c48241581b9d8a49669c9b18190c3a0098492000"
+      },
+      "textures/scanned/0.bin": {
+        "bytes": 37748736,
+        "sha256": "cc52bb0c98300bdd469d57d82788c0d324e94091622018c251a0c52625aa522a"
+      },
+      "textures/scanned/1.bin": {
+        "bytes": 9437184,
+        "sha256": "f5680c11a91ea47361c1f42f5010e88ba8fb7040b623ccfd73cd082fa5601e55"
+      },
+      "textures/scanned/2.bin": {
+        "bytes": 2359296,
+        "sha256": "f50d420c6928036decd8d983379c8124af6897c6730541438a56650aac8f647d"
+      },
+      "textures/scanned/3.bin": {
+        "bytes": 589824,
+        "sha256": "d7b6a9b4bad9f599983ff0474703baf5d43c9d3d8aa72c6a85a2275cf18330c8"
+      },
+      "textures/scanned/4.bin": {
+        "bytes": 147456,
+        "sha256": "b4aa176c8fa41cd4f961c6d5be6a831a8207c651e8838a3c2e438d9a97b5da50"
+      },
+      "textures/scanned/5.bin": {
+        "bytes": 36864,
+        "sha256": "b0db364aba88590ed7eaf523b139332bb3d3dc0c753b876fdace99d1efeeff7c"
+      },
+      "textures/scanned/6.bin": {
+        "bytes": 9216,
+        "sha256": "c23928049e6cd3a01a9dc9417447e23623640d11469da15da360517f786fe4c4"
+      },
+      "textures/scanned/7.bin": {
+        "bytes": 2304,
+        "sha256": "2f796c738a620408e2f0fd33ab7515c92d59bf202a98051e1933dada7538a8b6"
+      },
+      "textures/scanned/8.bin": {
+        "bytes": 576,
+        "sha256": "6671e6f635a582bd2c9f26cdeb0bbb3ddb42a88dd2c69c1d59ec01c1d7c494b0"
+      },
+      "textures/scanned/9.bin": {
+        "bytes": 144,
+        "sha256": "099e5dcc0ebf00fc0aa2a267d16d9cdee263290f48d1d6581313f0ecd3a9284c"
+      },
+      "textures/scanned/10.bin": {
+        "bytes": 36,
+        "sha256": "6378850a8d78a322bb911d00c855eaabb0a63715816ab789a8e45f97c55c7073"
+      }
+    }
+  },
+  "live": {
+    "original": {
+      "cases": {
+        "target_only": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "trigger_then_target": {
+          "unique_states": 2,
+          "differing_iterations": 176,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 848
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 176
+            }
+          ],
+          "samples_outside_target_control": 848,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_then_trigger": {
+          "unique_states": 2,
+          "differing_iterations": 179,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 845
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 179
+            }
+          ],
+          "samples_outside_target_control": 845,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_only_after": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        }
+      },
+      "target_controls_stable": true,
+      "trigger_effect_observed": true
+    },
+    "concrete_scan": {
+      "cases": {
+        "target_only": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "trigger_then_target": {
+          "unique_states": 2,
+          "differing_iterations": 9,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 1015
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 9
+            }
+          ],
+          "samples_outside_target_control": 1015,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_then_trigger": {
+          "unique_states": 2,
+          "differing_iterations": 7,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 1017
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 7
+            }
+          ],
+          "samples_outside_target_control": 1017,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_only_after": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        }
+      },
+      "target_controls_stable": true,
+      "trigger_effect_observed": true
+    },
+    "concrete_combined": {
+      "cases": {
+        "target_only": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "trigger_then_target": {
+          "unique_states": 2,
+          "differing_iterations": 189,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 835
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 189
+            }
+          ],
+          "samples_outside_target_control": 835,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_then_trigger": {
+          "unique_states": 2,
+          "differing_iterations": 210,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 814
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 210
+            }
+          ],
+          "samples_outside_target_control": 814,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_only_after": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        }
+      },
+      "target_controls_stable": true,
+      "trigger_effect_observed": true
+    }
+  },
+  "roundtrip": {
+    "original": {
+      "cases": {
+        "target_only": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "trigger_then_target": {
+          "unique_states": 2,
+          "differing_iterations": 64,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 960
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 64
+            }
+          ],
+          "samples_outside_target_control": 960,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_then_trigger": {
+          "unique_states": 2,
+          "differing_iterations": 101,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 923
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 101
+            }
+          ],
+          "samples_outside_target_control": 923,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_only_after": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        }
+      },
+      "target_controls_stable": true,
+      "trigger_effect_observed": true
+    },
+    "concrete_scan": {
+      "cases": {
+        "target_only": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "trigger_then_target": {
+          "unique_states": 2,
+          "differing_iterations": 2,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 1022
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 2
+            }
+          ],
+          "samples_outside_target_control": 1022,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_then_trigger": {
+          "unique_states": 2,
+          "differing_iterations": 14,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 1010
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 14
+            }
+          ],
+          "samples_outside_target_control": 1010,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_only_after": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        }
+      },
+      "target_controls_stable": true,
+      "trigger_effect_observed": true
+    },
+    "concrete_combined": {
+      "cases": {
+        "target_only": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "trigger_then_target": {
+          "unique_states": 2,
+          "differing_iterations": 167,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 857
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 167
+            }
+          ],
+          "samples_outside_target_control": 857,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_then_trigger": {
+          "unique_states": 2,
+          "differing_iterations": 234,
+          "states": [
+            {
+              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "count": 790
+            },
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 234
+            }
+          ],
+          "samples_outside_target_control": 790,
+          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "gl_error": "GL_NO_ERROR"
+        },
+        "target_only_after": {
+          "unique_states": 1,
+          "differing_iterations": 0,
+          "states": [
+            {
+              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "count": 1024
+            }
+          ],
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
+          "gl_error": "GL_NO_ERROR"
+        }
+      },
+      "target_controls_stable": true,
+      "trigger_effect_observed": true
+    }
+  },
+  "limitations": [
+    "Local snapshot includes source texture pixels; not committed or externally submitted.",
+    "Explicit depth-only state is shared by live, round-trip and independent replay."
+  ]
+}
