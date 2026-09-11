@@ -90,7 +90,9 @@ def capture(path: Path, output: Path, iterations: int) -> dict:
             report["live"][name] = measure(app.ctx, program, raw, lambda: _bind_opaque_textures(app), iterations)
             save_report(output, report)
         manifest, blobs = read_bundle(path)
-        report["roundtrip"] = replay(app.ctx, manifest, blobs, iterations)
+        report["roundtrip"], report["roundtrip_sampler_state"] = replay(
+            app.ctx, manifest, blobs, iterations
+        )
         report["complete"] = True
         save_report(output, report)
         return report

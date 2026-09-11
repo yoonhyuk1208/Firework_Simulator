@@ -56,7 +56,8 @@ def test_exact_array_mips_include_odd_rgb_rows_and_tail(ctx):
         with pytest.raises(ValueError, match="length"):
             transfer.transfer(original, 2, b"short")
         spec = capture_texture("array", original, 14, blobs, array=True)
-        restored = restore_textures(ctx, {"textures": [spec]}, blobs)
+        restored, sampler_state = restore_textures(ctx, {"textures": [spec]}, blobs)
+        assert sampler_state and sampler_state[0]["matched"]
         assert [transfer.transfer(restored[0], level) for level in range(3)] == expected
         assert ctx.error == "GL_NO_ERROR"
     finally:

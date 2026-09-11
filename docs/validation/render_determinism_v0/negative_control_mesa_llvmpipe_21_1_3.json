@@ -3,9 +3,9 @@
   "probe": "facade_snapshot_replay_v0_15c",
   "complete": true,
   "gpu": {
-    "GL_VENDOR": "Intel",
-    "GL_RENDERER": "Intel(R) Arc(TM) 140V GPU (16GB)",
-    "GL_VERSION": "4.3.0 - Build 32.0.101.8626"
+    "GL_VENDOR": "Mesa/X.org",
+    "GL_RENDERER": "llvmpipe (LLVM 12.0.0, 256 bits)",
+    "GL_VERSION": "4.5 (Core Profile) Mesa 21.1.3 (git-07ebfa36c8)"
   },
   "iterations_per_case": 1024,
   "snapshot_sha256": "ad2df3e3ae0f5cdb613ccfcd391eb25fcb88ce7f7d62108a8888c5325e45c8b8",
@@ -18,7 +18,7 @@
           "differing_iterations": 0,
           "states": [
             {
-              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "sha256": "9da02018fad154cd5f57814164cab975f12dd008d3a7a5a113666058cc1ce9eb",
               "count": 1024
             }
           ],
@@ -27,37 +27,29 @@
           "gl_error": "GL_NO_ERROR"
         },
         "trigger_then_target": {
-          "unique_states": 2,
-          "differing_iterations": 189,
+          "unique_states": 1,
+          "differing_iterations": 0,
           "states": [
             {
-              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
-              "count": 835
-            },
-            {
-              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
-              "count": 189
+              "sha256": "9da02018fad154cd5f57814164cab975f12dd008d3a7a5a113666058cc1ce9eb",
+              "count": 1024
             }
           ],
-          "samples_outside_target_control": 835,
-          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
           "gl_error": "GL_NO_ERROR"
         },
         "target_then_trigger": {
-          "unique_states": 2,
-          "differing_iterations": 172,
+          "unique_states": 1,
+          "differing_iterations": 0,
           "states": [
             {
-              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
-              "count": 852
-            },
-            {
-              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
-              "count": 172
+              "sha256": "9da02018fad154cd5f57814164cab975f12dd008d3a7a5a113666058cc1ce9eb",
+              "count": 1024
             }
           ],
-          "samples_outside_target_control": 852,
-          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
           "gl_error": "GL_NO_ERROR"
         },
         "target_only_after": {
@@ -65,7 +57,7 @@
           "differing_iterations": 0,
           "states": [
             {
-              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "sha256": "9da02018fad154cd5f57814164cab975f12dd008d3a7a5a113666058cc1ce9eb",
               "count": 1024
             }
           ],
@@ -75,7 +67,7 @@
         }
       },
       "target_controls_stable": true,
-      "trigger_effect_observed": true
+      "trigger_effect_observed": false
     },
     "concrete_scan": {
       "cases": {
@@ -84,7 +76,7 @@
           "differing_iterations": 0,
           "states": [
             {
-              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "sha256": "9da02018fad154cd5f57814164cab975f12dd008d3a7a5a113666058cc1ce9eb",
               "count": 1024
             }
           ],
@@ -93,20 +85,16 @@
           "gl_error": "GL_NO_ERROR"
         },
         "trigger_then_target": {
-          "unique_states": 2,
-          "differing_iterations": 1,
+          "unique_states": 1,
+          "differing_iterations": 0,
           "states": [
             {
-              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
-              "count": 1023
-            },
-            {
-              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
-              "count": 1
+              "sha256": "9da02018fad154cd5f57814164cab975f12dd008d3a7a5a113666058cc1ce9eb",
+              "count": 1024
             }
           ],
-          "samples_outside_target_control": 1023,
-          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
           "gl_error": "GL_NO_ERROR"
         },
         "target_then_trigger": {
@@ -114,12 +102,12 @@
           "differing_iterations": 0,
           "states": [
             {
-              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
+              "sha256": "9da02018fad154cd5f57814164cab975f12dd008d3a7a5a113666058cc1ce9eb",
               "count": 1024
             }
           ],
-          "samples_outside_target_control": 1024,
-          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
           "gl_error": "GL_NO_ERROR"
         },
         "target_only_after": {
@@ -127,7 +115,7 @@
           "differing_iterations": 0,
           "states": [
             {
-              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "sha256": "9da02018fad154cd5f57814164cab975f12dd008d3a7a5a113666058cc1ce9eb",
               "count": 1024
             }
           ],
@@ -137,7 +125,7 @@
         }
       },
       "target_controls_stable": true,
-      "trigger_effect_observed": true
+      "trigger_effect_observed": false
     },
     "concrete_combined": {
       "cases": {
@@ -146,7 +134,7 @@
           "differing_iterations": 0,
           "states": [
             {
-              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "sha256": "9da02018fad154cd5f57814164cab975f12dd008d3a7a5a113666058cc1ce9eb",
               "count": 1024
             }
           ],
@@ -155,37 +143,29 @@
           "gl_error": "GL_NO_ERROR"
         },
         "trigger_then_target": {
-          "unique_states": 2,
-          "differing_iterations": 248,
+          "unique_states": 1,
+          "differing_iterations": 0,
           "states": [
             {
-              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
-              "count": 776
-            },
-            {
-              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
-              "count": 248
+              "sha256": "9da02018fad154cd5f57814164cab975f12dd008d3a7a5a113666058cc1ce9eb",
+              "count": 1024
             }
           ],
-          "samples_outside_target_control": 776,
-          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
           "gl_error": "GL_NO_ERROR"
         },
         "target_then_trigger": {
-          "unique_states": 2,
-          "differing_iterations": 236,
+          "unique_states": 1,
+          "differing_iterations": 0,
           "states": [
             {
-              "sha256": "ec5e576ac2c320b857d74d5286ac6506e94a5189be1c8fcda54fba4d8495bcb0",
-              "count": 788
-            },
-            {
-              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
-              "count": 236
+              "sha256": "9da02018fad154cd5f57814164cab975f12dd008d3a7a5a113666058cc1ce9eb",
+              "count": 1024
             }
           ],
-          "samples_outside_target_control": 788,
-          "max_abs_rgb_from_target": 0.0015726089477539062,
+          "samples_outside_target_control": 0,
+          "max_abs_rgb_from_target": 0.0,
           "gl_error": "GL_NO_ERROR"
         },
         "target_only_after": {
@@ -193,7 +173,7 @@
           "differing_iterations": 0,
           "states": [
             {
-              "sha256": "c85f6aac8a8e49952c7d9c4bb7c8b76231742d727acaa818525b8aff3b114e6d",
+              "sha256": "9da02018fad154cd5f57814164cab975f12dd008d3a7a5a113666058cc1ce9eb",
               "count": 1024
             }
           ],
@@ -203,18 +183,18 @@
         }
       },
       "target_controls_stable": true,
-      "trigger_effect_observed": true
+      "trigger_effect_observed": false
     }
   },
   "sampler_state": [
     {
       "texture": "scanned",
       "anisotropy_requested": 8.0,
-      "anisotropy_achieved": 8.0,
-      "matched": true
+      "anisotropy_achieved": 0.0,
+      "matched": false
     }
   ],
-  "sampler_mismatch_allowed": false,
+  "sampler_mismatch_allowed": true,
   "limitations": [
     "Exact resource replay is not a complete capture of prior driver/context history.",
     "Finite samples do not prove stability, necessity or a driver fault."

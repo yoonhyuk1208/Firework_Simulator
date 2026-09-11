@@ -134,8 +134,20 @@ def capture_texture(name, texture, unit, blobs, *, array=False) -> dict:
     return spec
 
 
-def restore_textures(ctx, manifest, blobs) -> list:
+def restore_textures(ctx, manifest, blobs, *, allow_sampler_mismatch: bool = False):
+    """Restore the captured textures; returns (textures, sampler_state).
+
+    Sampler state is reported rather than assumed. A device that cannot apply
+    the captured anisotropy is refused by default, because measuring one
+    sampler configuration while claiming another is the failure this guard
+    exists to prevent. `allow_sampler_mismatch` is for the one case where
+    parity is impossible by construction — comparing against an implementation
+    that does not expose the extension at all — and every caller that sets it
+    records the achieved value beside the result.
+    """
+
     textures = []
+    sampler_state = []
     try:
         for spec in manifest["textures"]:
             factory = ctx.texture_array if spec["array"] else ctx.texture
@@ -150,15 +162,26 @@ def restore_textures(ctx, manifest, blobs) -> list:
                     if transfer.transfer(texture, level) != blobs[key]:
                         raise RuntimeError(f"array mip restore differs: {key}")
                 texture.anisotropy = spec["anisotropy"]
-                if texture.anisotropy != spec["anisotropy"]:
-                    raise RuntimeError("device cannot restore captured anisotropy")
+                achieved = float(texture.anisotropy)
+                matched = achieved == spec["anisotropy"]
+                sampler_state.append({
+                    "texture": spec["name"],
+                    "anisotropy_requested": float(spec["anisotropy"]),
+                    "anisotropy_achieved": achieved,
+                    "matched": matched,
+                })
+                if not matched and not allow_sampler_mismatch:
+                    raise RuntimeError(
+                        "device cannot restore captured anisotropy "
+                        f"(requested {spec['anisotropy']}, achieved {achieved})"
+                    )
             elif texture.read(alignment=1) != blobs[spec["levels"][0]]:
                 raise RuntimeError("texture restore differs")
             texture.filter = tuple(spec["filter"])
             texture.repeat_x, texture.repeat_y = spec["repeat_x"], spec["repeat_y"]
         if ctx.error != "GL_NO_ERROR":
             raise RuntimeError("OpenGL error restoring textures")
-        return textures
+        return textures, sampler_state
     except BaseException:
         for texture in textures:
             texture.release()
@@ -254,13 +277,15 @@ def measure(ctx, program, vertices: bytes, bind, iterations: int) -> dict:
         colour.release()
 
 
-def replay(ctx, manifest, blobs, iterations: int) -> dict:
+def replay(ctx, manifest, blobs, iterations: int, *, allow_sampler_mismatch: bool = False):
     previous = ctx.fbo
     anchor = ctx.simple_framebuffer((1, 1))
     anchor.use()
     textures = []
     try:
-        textures = restore_textures(ctx, manifest, blobs)
+        textures, sampler_state = restore_textures(
+            ctx, manifest, blobs, allow_sampler_mismatch=allow_sampler_mismatch
+        )
         def bind():
             for texture, spec in zip(textures, manifest["textures"], strict=True):
                 texture.use(spec["unit"])
@@ -272,7 +297,7 @@ def replay(ctx, manifest, blobs, iterations: int) -> dict:
                 results[name] = measure(ctx, program, blobs["vertices.bin"], bind, iterations)
             finally:
                 program.release()
-        return results
+        return results, sampler_state
     finally:
         for texture in textures:
             texture.release()

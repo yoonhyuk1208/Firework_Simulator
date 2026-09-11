@@ -23,13 +23,17 @@ def main():
     parser.add_argument("--snapshot", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--iterations", type=int, default=1024)
+    parser.add_argument("--allow-sampler-mismatch", action="store_true",
+                        help="permit a device that cannot apply the captured anisotropy; "
+                             "the achieved value is recorded in the report")
     args = parser.parse_args()
     if args.iterations < 2:
         parser.error("iterations must be at least 2")
     manifest, blobs = read_bundle(args.snapshot)
     ctx = moderngl.create_standalone_context(require=manifest["context_require"])
     try:
-        results = replay(ctx, manifest, blobs, args.iterations)
+        results, sampler_state = replay(ctx, manifest, blobs, args.iterations,
+                                        allow_sampler_mismatch=args.allow_sampler_mismatch)
         imports = [name for name in sys.modules if name == "simulator" or name.startswith("simulator.")]
         if imports:
             raise RuntimeError(f"independent replay imported simulator modules: {imports}")
@@ -37,6 +41,8 @@ def main():
                   "gpu": gpu_info(ctx), "iterations_per_case": args.iterations,
                   "snapshot_sha256": sha256(args.snapshot.read_bytes()).hexdigest(),
                   "simulator_modules_loaded": imports, "results": results,
+                  "sampler_state": sampler_state,
+                  "sampler_mismatch_allowed": args.allow_sampler_mismatch,
                   "limitations": ["Exact resource replay is not a complete capture of prior driver/context history.",
                                   "Finite samples do not prove stability, necessity or a driver fault."]}
         save_report(args.output, report)
