@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "probe": "aliasing_vs_supersampled_reference",
+  "frames": 8,
+  "supersample": 4,
+  "block": 16,
+  "views": [
+    {
+      "view_id": "terrain_shoreline",
+      "gl": {
+        "GL_VENDOR": "Intel",
+        "GL_RENDERER": "Intel(R) Arc(TM) 140V GPU (16GB)",
+        "GL_VERSION": "4.3.0 - Build 32.0.101.8626"
+      },
+      "supersample": 4,
+      "excluded_residuals": [],
+      "excluded_pixels": 0,
+      "mean_abs_error": 0.00014816462269664043,
+      "p95_abs_error": 0.00024209991097450152,
+      "max_abs_error": 0.24945008754730225,
+      "relative_threshold": 0.05,
+      "visibly_wrong_fraction": 0.24620768229166667,
+      "worst_blocks": [
+        {
+          "row": 336,
+          "col": 1008,
+          "size": 16,
+          "mean_abs_error": 0.007408253033645451
+        },
+        {
+          "row": 352,
+          "col": 576,
+          "size": 16,
+          "mean_abs_error": 0.0066334800503682345
+        },
+        {
+          "row": 336,
+          "col": 1152,
+          "size": 16,
+          "mean_abs_error": 0.0056325471377931535
+        },
+        {
+          "row": 336,
+          "col": 480,
+          "size": 16,
+          "mean_abs_error": 0.005400059628300369
+        },
+        {
+          "row": 336,
+          "col": 784,
+          "size": 16,
+          "mean_abs_error": 0.005257056327536702
+        }
+      ]
+    },
+    {
+      "view_id": "grass_close",
+      "gl": {
+        "GL_VENDOR": "Intel",
+        "GL_RENDERER": "Intel(R) Arc(TM) 140V GPU (16GB)",
+        "GL_VERSION": "4.3.0 - Build 32.0.101.8626"
+      },
+      "supersample": 4,
+      "excluded_residuals": [],
+      "excluded_pixels": 0,
+      "mean_abs_error": 0.00016507415212901023,
+      "p95_abs_error": 0.00018334388732910156,
+      "max_abs_error": 0.07658727467060089,
+      "relative_threshold": 0.05,
+      "visibly_wrong_fraction": 0.3517035590277778,
+      "worst_blocks": [
+        {
+          "row": 144,
+          "col": 1136,
+          "size": 16,
+          "mean_abs_error": 0.008983820676803589
+        },
+        {
+          "row": 160,
+          "col": 1136,
+          "size": 16,
+          "mean_abs_error": 0.008981620718259364
+        },
+        {
+          "row": 16,
+          "col": 928,
+          "size": 16,
+          "mean_abs_error": 0.0080993207229767
+        },
+        {
+          "row": 160,
+          "col": 1168,
+          "size": 16,
+          "mean_abs_error": 0.007633663713932037
+        },
+        {
+          "row": 160,
+          "col": 1152,
+          "size": 16,
+          "mean_abs_error": 0.007381674717180431
+        }
+      ]
+    },
+    {
+      "view_id": "road_ground",
+      "gl": {
+        "GL_VENDOR": "Intel",
+        "GL_RENDERER": "Intel(R) Arc(TM) 140V GPU (16GB)",
+        "GL_VERSION": "4.3.0 - Build 32.0.101.8626"
+      },
+      "supersample": 4,
+      "excluded_residuals": [],
+      "excluded_pixels": 0,
+      "mean_abs_error": 8.92479866403543e-06,
+      "p95_abs_error": 3.738701343536377e-05,
+      "max_abs_error": 0.009338662028312683,
+      "relative_threshold": 0.05,
+      "visibly_wrong_fraction": 0.10939887152777777,
+      "worst_blocks": [
+        {
+          "row": 352,
+          "col": 496,
+          "size": 16,
+          "mean_abs_error": 0.00031553523149341345
+        },
+        {
+          "row": 336,
+          "col": 208,
+          "size": 16,
+          "mean_abs_error": 0.0001956097548827529
+        },
+        {
+          "row": 336,
+          "col": 96,
+          "size": 16,
+          "mean_abs_error": 0.000187338562682271
+        },
+        {
+          "row": 336,
+          "col": 272,
+          "size": 16,
+          "mean_abs_error": 0.00017880700761452317
+        },
+        {
+          "row": 352,
+          "col": 528,
+          "size": 16,
+          "mean_abs_error": 0.00017815202591009438
+        }
+      ]
+    },
+    {
+      "view_id": "facade_landmark",
+      "gl": {
+        "GL_VENDOR": "Intel",
+        "GL_RENDERER": "Intel(R) Arc(TM) 140V GPU (16GB)",
+        "GL_VERSION": "4.3.0 - Build 32.0.101.8626"
+      },
+      "supersample": 4,
+      "excluded_residuals": [],
+      "excluded_pixels": 0,
+      "mean_abs_error": 0.00063249498191807,
+      "p95_abs_error": 0.0033445358276367188,
+      "max_abs_error": 0.04468727111816406,
+      "relative_threshold": 0.05,
+      "visibly_wrong_fraction": 0.6216796875,
+      "worst_blocks": [
+        {
+          "row": 240,
+          "col": 384,
+          "size": 16,
+          "mean_abs_error": 0.011051587760448456
+        },
+        {
+          "row": 224,
+          "col": 384,
+          "size": 16,
+          "mean_abs_error": 0.010976794175803661
+        },
+        {
+          "row": 256,
+          "col": 496,
+          "size": 16,
+          "mean_abs_error": 0.010462000966072083
+        },
+        {
+          "row": 416,
+          "col": 656,
+          "size": 16,
+          "mean_abs_error": 0.009677773341536522
+        },
+        {
+          "row": 400,
+          "col": 192,
+          "size": 16,
+          "mean_abs_error": 0.009661629796028137
+        }
+      ]
+    },
+    {
+      "view_id": "bridge_structure",
+      "gl": {
+        "GL_VENDOR": "Intel",
+        "GL_RENDERER": "Intel(R) Arc(TM) 140V GPU (16GB)",
+        "GL_VERSION": "4.3.0 - Build 32.0.101.8626"
+      },
+      "supersample": 4,
+      "excluded_residuals": [],
+      "excluded_pixels": 0,
+      "mean_abs_error": 0.00029818095744202664,
+      "p95_abs_error": 0.0006161503493785827,
+      "max_abs_error": 0.30109813809394836,
+      "relative_threshold": 0.05,
+      "visibly_wrong_fraction": 0.37244791666666666,
+      "worst_blocks": [
+        {
+          "row": 288,
+          "col": 800,
+          "size": 16,
+          "mean_abs_error": 0.005907491140533239
+        },
+        {
+          "row": 368,
+          "col": 320,
+          "size": 16,
+          "mean_abs_error": 0.005807772555272095
+        },
+        {
+          "row": 352,
+          "col": 256,
+          "size": 16,
+          "mean_abs_error": 0.005745053509599529
+        },
+        {
+          "row": 352,
+          "col": 288,
+          "size": 16,
+          "mean_abs_error": 0.005652806503348984
+        },
+        {
+          "row": 464,
+          "col": 944,
+          "size": 16,
+          "mean_abs_error": 0.0055825962335802615
+        }
+      ]
+    },
+    {
+      "view_id": "water_reflection",
+      "gl": {
+        "GL_VENDOR": "Intel",
+        "GL_RENDERER": "Intel(R) Arc(TM) 140V GPU (16GB)",
+        "GL_VERSION": "4.3.0 - Build 32.0.101.8626"
+      },
+      "supersample": 4,
+      "excluded_residuals": [
+        "reflection_borne_water_patch",
+        "facade_window_grid_quad"
+      ],
+      "excluded_pixels": 1367,
+      "mean_abs_error": 0.00019976829046274285,
+      "p95_abs_error": 0.0003185868263244629,
+      "max_abs_error": 0.2286118119955063,
+      "relative_threshold": 0.05,
+      "visibly_wrong_fraction": 0.1711044920145224,
+      "worst_blocks": [
+        {
+          "row": 336,
+          "col": 1136,
+          "size": 16,
+          "mean_abs_error": 0.005565748491790146
+        },
+        {
+          "row": 352,
+          "col": 32,
+          "size": 16,
+          "mean_abs_error": 0.005333952678483911
+        },
+        {
+          "row": 352,
+          "col": 256,
+          "size": 16,
+          "mean_abs_error": 0.005257593453279696
+        },
+        {
+          "row": 320,
+          "col": 512,
+          "size": 16,
+          "mean_abs_error": 0.005212856165599078
+        },
+        {
+          "row": 352,
+          "col": 240,
+          "size": 16,
+          "mean_abs_error": 0.005159143314813264
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "A box-filtered supersample is a better reference than the 1x render, not ground truth.",
+    "Ambient occlusion and the reflection pre-pass use resolution-scaled buffers, so their sampling improves in the reference too."
+  ]
+}
