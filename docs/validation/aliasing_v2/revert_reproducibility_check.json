@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "probe": "aliasing_vs_supersampled_reference",
+  "frames": 8,
+  "supersample": 4,
+  "block": 16,
+  "views": [
+    {
+      "view_id": "water_reflection",
+      "gl": {
+        "GL_VENDOR": "Intel",
+        "GL_RENDERER": "Intel(R) Arc(TM) 140V GPU (16GB)",
+        "GL_VERSION": "4.3.0 - Build 32.0.101.8626"
+      },
+      "supersample": 4,
+      "excluded_residuals": [
+        "reflection_borne_water_patch",
+        "facade_window_grid_quad"
+      ],
+      "excluded_pixels": 1367,
+      "mean_abs_error": 0.00019976829046274285,
+      "p95_abs_error": 0.0003185868263244629,
+      "max_abs_error": 0.2286118119955063,
+      "relative_threshold": 0.05,
+      "visibly_wrong_fraction": 0.1711044920145224,
+      "worst_blocks": [
+        {
+          "row": 336,
+          "col": 1136,
+          "size": 16,
+          "mean_abs_error": 0.005565748491790146
+        },
+        {
+          "row": 352,
+          "col": 32,
+          "size": 16,
+          "mean_abs_error": 0.005333952678483911
+        },
+        {
+          "row": 352,
+          "col": 256,
+          "size": 16,
+          "mean_abs_error": 0.005257593453279696
+        },
+        {
+          "row": 320,
+          "col": 512,
+          "size": 16,
+          "mean_abs_error": 0.005212856165599078
+        },
+        {
+          "row": 352,
+          "col": 240,
+          "size": 16,
+          "mean_abs_error": 0.005159143314813264
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "A box-filtered supersample is a better reference than the 1x render, not ground truth.",
+    "Ambient occlusion and the reflection pre-pass use resolution-scaled buffers, so their sampling improves in the reference too."
+  ]
+}

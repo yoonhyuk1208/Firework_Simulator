@@ -1,0 +1,11 @@
+# Shader sources are checksum-locked by committed validation reports, which
+# hash the bytes on disk. With core.autocrlf=true and no policy here a checkout
+# on Windows rewrites them to CRLF while the blob keeps LF, so those hashes
+# stop matching — a fresh clone fails the suite before any work starts.
+#
+# Scoped deliberately to the locked file types. Normalising the whole tree
+# would rewrite many files that are not checksum-locked and is a separate
+# decision.
+*.frag text eol=lf
+*.vert text eol=lf
+*.glsl text eol=lf

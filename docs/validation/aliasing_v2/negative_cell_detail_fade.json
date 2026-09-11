@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "probe": "aliasing_vs_supersampled_reference",
+  "frames": 8,
+  "supersample": 4,
+  "block": 16,
+  "views": [
+    {
+      "view_id": "facade_landmark",
+      "gl": {
+        "GL_VENDOR": "Intel",
+        "GL_RENDERER": "Intel(R) Arc(TM) 140V GPU (16GB)",
+        "GL_VERSION": "4.3.0 - Build 32.0.101.8626"
+      },
+      "supersample": 4,
+      "excluded_residuals": [],
+      "excluded_pixels": 0,
+      "mean_abs_error": 0.0006324950088229444,
+      "p95_abs_error": 0.0033445358276367188,
+      "max_abs_error": 0.04468727111816406,
+      "relative_threshold": 0.05,
+      "visibly_wrong_fraction": 0.6216796875,
+      "worst_blocks": [
+        {
+          "row": 240,
+          "col": 384,
+          "size": 16,
+          "mean_abs_error": 0.011051587760448456
+        },
+        {
+          "row": 224,
+          "col": 384,
+          "size": 16,
+          "mean_abs_error": 0.010976794175803661
+        },
+        {
+          "row": 256,
+          "col": 496,
+          "size": 16,
+          "mean_abs_error": 0.010462000966072083
+        },
+        {
+          "row": 416,
+          "col": 656,
+          "size": 16,
+          "mean_abs_error": 0.009677773341536522
+        },
+        {
+          "row": 400,
+          "col": 192,
+          "size": 16,
+          "mean_abs_error": 0.009661629796028137
+        }
+      ]
+    },
+    {
+      "view_id": "water_reflection",
+      "gl": {
+        "GL_VENDOR": "Intel",
+        "GL_RENDERER": "Intel(R) Arc(TM) 140V GPU (16GB)",
+        "GL_VERSION": "4.3.0 - Build 32.0.101.8626"
+      },
+      "supersample": 4,
+      "excluded_residuals": [
+        "reflection_borne_water_patch",
+        "facade_window_grid_quad"
+      ],
+      "excluded_pixels": 1367,
+      "mean_abs_error": 0.0001966461180014737,
+      "p95_abs_error": 0.000637781620025632,
+      "max_abs_error": 0.2286118119955063,
+      "relative_threshold": 0.05,
+      "visibly_wrong_fraction": 0.1758000419458985,
+      "worst_blocks": [
+        {
+          "row": 352,
+          "col": 32,
+          "size": 16,
+          "mean_abs_error": 0.005869410088052973
+        },
+        {
+          "row": 320,
+          "col": 528,
+          "size": 16,
+          "mean_abs_error": 0.005647535203024745
+        },
+        {
+          "row": 336,
+          "col": 1136,
+          "size": 16,
+          "mean_abs_error": 0.005562272854149342
+        },
+        {
+          "row": 352,
+          "col": 256,
+          "size": 16,
+          "mean_abs_error": 0.005349760118406266
+        },
+        {
+          "row": 336,
+          "col": 1152,
+          "size": 16,
+          "mean_abs_error": 0.005088064295705408
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "A box-filtered supersample is a better reference than the 1x render, not ground truth.",
+    "Ambient occlusion and the reflection pre-pass use resolution-scaled buffers, so their sampling improves in the reference too."
+  ]
+}
