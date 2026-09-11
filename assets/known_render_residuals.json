@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "purpose": "Device-scoped allowances for capture differences that are reproduced driver behaviour rather than project regressions. Each entry narrows the exemption to one view, one target, one screen region and a bounded magnitude on one named driver build. Pixels outside a region, magnitudes above a bound, or a device that does not match are gated normally.",
+  "policy": {
+    "global_limits_unchanged": true,
+    "note": "DEFAULT_HDR_REGRESSION_LIMITS and DEFAULT_SDR_REGRESSION_LIMITS are untouched. An allowance removes named pixels from the comparison and then fails if those pixels exceed the recorded bounds, so it can only ever be narrower than raising a limit."
+  },
+  "residuals": [
+    {
+      "id": "reflection_borne_water_patch",
+      "view_id": "water_reflection",
+      "region_rows": [350, 392],
+      "region_cols": [516, 544],
+      "observed": {
+        "hdr_pixels": 136,
+        "hdr_max_abs_error": 7.6294e-4,
+        "sdr_pixels": 128,
+        "sdr_max_abs_error_rgb8": 9
+      },
+      "bounds": {
+        "max_pixels": 160,
+        "hdr_max_abs_error": 1.0e-3,
+        "sdr_max_abs_error_rgb8": 12
+      },
+      "attribution": "Introduced by the water pass and traceable to the reflection colour target, whose own depth is bit-stable. Sporadic between otherwise identical frames.",
+      "evidence": [
+        "docs/validation/render_determinism_v0/negative_control_mesa_llvmpipe_21_1_3.json",
+        "docs/validation/render_determinism_v0/snapshot_replay_substituted_intel_arc_140v.json"
+      ]
+    },
+    {
+      "id": "facade_window_grid_quad",
+      "view_id": "water_reflection",
+      "region_rows": [332, 343],
+      "region_cols": [594, 603],
+      "observed": {
+        "hdr_pixels": 8,
+        "hdr_max_abs_error": 1.2035e-3,
+        "sdr_pixels": 8,
+        "sdr_max_abs_error_rgb8": 25
+      },
+      "bounds": {
+        "max_pixels": 16,
+        "hdr_max_abs_error": 1.5e-3,
+        "sdr_max_abs_error_rgb8": 32
+      },
+      "attribution": "A quad-aligned block on a residential facade about 1.5 km away, reduced in V0-15 to a standalone reproduction that is positive on this driver and absent on Mesa llvmpipe. Two discrete states only.",
+      "evidence": [
+        "docs/validation/render_determinism_v0/negative_control_mesa_llvmpipe_21_1_3.json",
+        "docs/validation/render_determinism_v0/snapshot_replay_substituted_intel_arc_140v.json"
+      ]
+    }
+  ],
+  "devices": [
+    {
+      "GL_VENDOR": "Intel",
+      "GL_RENDERER_contains": "Arc(TM) 140V",
+      "GL_VERSION_contains": "32.0.101.8626"
+    }
+  ]
+}

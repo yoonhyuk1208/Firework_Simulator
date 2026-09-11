@@ -36,15 +36,17 @@ from simulator.validation.capture import (
     compare_display_sdr,
     compare_linear_hdr,
     coverage_statistics,
-    load_coverage_mask,
     display_sdr_statistics,
     linear_hdr_statistics,
+    load_coverage_mask,
+    load_known_residuals,
     read_display_sdr,
     read_linear_hdr,
     read_scene_coverage,
     save_coverage_mask,
     save_display_sdr,
     save_linear_hdr,
+    select_residuals,
 )
 from simulator.validation.views import (
     DEFAULT_VISUAL_VIEWS_PATH,
@@ -140,8 +142,13 @@ def capture_view(
         hdr = read_linear_hdr(app.renderer)
         sdr = read_display_sdr(app.ctx)
         coverage = read_scene_coverage(app.renderer)
+        info = app.ctx.info
         context = {
             "view_id": view.view_id,
+            "gl": {
+                key: info.get(key)
+                for key in ("GL_VENDOR", "GL_RENDERER", "GL_VERSION")
+            },
             "subject": view.subject,
             "position_eus_m": list(view.position_eus_m),
             "target_eus_m": list(view.target_eus_m),
@@ -226,6 +233,17 @@ def compare_capture_directories(reference_dir: Path, candidate_dir: Path) -> dic
     candidate_views = {item["view_id"]: item for item in candidate["captures"]}
     if reference_views.keys() != candidate_views.keys():
         mismatches["view_ids"] = [sorted(reference_views), sorted(candidate_views)]
+    # Allowances describe one driver build, so they apply only when both
+    # captures came from a device the record names. Two captures from different
+    # devices are not comparable at this tolerance and are refused outright.
+    known_residuals = load_known_residuals()
+    reference_gl, candidate_gl = reference.get("gl"), candidate.get("gl")
+    gl_info = None
+    if reference_gl and candidate_gl:
+        if reference_gl != candidate_gl:
+            mismatches["gl"] = [reference_gl, candidate_gl]
+        else:
+            gl_info = reference_gl
     comparisons = []
     for view_id in sorted(reference_views.keys() & candidate_views.keys()):
         first = reference_views[view_id]
@@ -236,8 +254,9 @@ def compare_capture_directories(reference_dir: Path, candidate_dir: Path) -> dic
             sdr_reference = np.asarray(image.convert("RGB")).copy()
         with Image.open(candidate_dir / second["sdr"]["path"]) as image:
             sdr_candidate = np.asarray(image.convert("RGB")).copy()
-        hdr = compare_linear_hdr(hdr_reference, hdr_candidate)
-        sdr = compare_display_sdr(sdr_reference, sdr_candidate)
+        allowances = select_residuals(known_residuals, view_id, gl_info) if gl_info else []
+        hdr = compare_linear_hdr(hdr_reference, hdr_candidate, allowances=allowances)
+        sdr = compare_display_sdr(sdr_reference, sdr_candidate, allowances=allowances)
         # Coverage predates neither capture unconditionally: a directory
         # written before masks existed still compares on colour alone rather
         # than failing for a file it could not have produced.
@@ -258,6 +277,7 @@ def compare_capture_directories(reference_dir: Path, candidate_dir: Path) -> dic
                 "hdr": hdr,
                 "sdr": sdr,
                 "coverage": coverage,
+                "allowances_applied": [entry["id"] for entry in allowances],
             }
         )
     return {
@@ -331,6 +351,10 @@ def main() -> int:
         "display_mode": display_mode,
         "frames": arguments.frames,
         "source": suite.source,
+        # Recorded so a comparison can tell whether two captures even came from
+        # the same driver, and so a device-scoped allowance cannot be applied
+        # to a device it was never measured on.
+        "gl": results[0].get("gl") if results else None,
         "captures": results,
     }
     manifest_path = arguments.output_dir / "manifest.json"
